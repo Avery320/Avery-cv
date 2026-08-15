@@ -32,6 +32,10 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.image-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .image-grid img {
     width: 100%;
     margin: 0;
@@ -39,7 +43,8 @@
 
 @media (max-width: 767px) {
     .image-grid-2,
-    .image-grid-3 {
+    .image-grid-3,
+    .image-grid-4 {
         grid-template-columns: 1fr;
     }
 }

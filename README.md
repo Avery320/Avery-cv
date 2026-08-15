@@ -39,6 +39,10 @@ Personal CV and portfolio website featuring selected projects and robotics work.
 │   │   ├── SideBarMenu.astro
 │   │   └── ThemeToggle.astro
 │   ├── content/
+│   │   ├── projects/
+│   │   │   ├── graphcrete.md
+│   │   │   ├── robotic-tectonics.md
+│   │   │   └── smart-construction-concrete-formwork.md
 │   │   ├── robotics/
 │   │   │   ├── gh-ros2.md
 │   │   │   ├── hiwin-robot-arm-kinematics.md
@@ -54,6 +58,8 @@ Personal CV and portfolio website featuring selected projects and robotics work.
 │   │   ├── 404.astro
 │   │   ├── cv.astro
 │   │   ├── index.astro
+│   │   ├── projects/
+│   │   │   └── [slug].astro
 │   │   ├── projects.astro
 │   │   ├── robotics/
 │   │   │   └── [slug].astro
