@@ -1,5 +1,5 @@
 ---
-const { title, subtitle, href, date, description } = Astro.props;
+const { title, titlePrefix, titleSuffix, subtitle, href, date, description } = Astro.props;
 ---
 
 <div class="flex">
@@ -9,14 +9,21 @@ const { title, subtitle, href, date, description } = Astro.props;
   </div>
   <div class="experience__data bd-grid px-5">
     <h3 class="font-semibold mb-1">
-      {date}｜
-      {
-        href
-          ? <a class="content-link" href={href}>{title}</a>
-          : title
-      }
+      {date}｜ <span>{titlePrefix}{href ? <a class="content-link" href={href}>{title}</a> : title}{titleSuffix}</span>
     </h3>
-    <span class="font-light text-sm">{subtitle}</span>
-    {description && <p class="my-2 text-justify">{description}</p>}
+    {subtitle && <span class="font-light text-sm">{subtitle}</span>}
+    {
+      Array.isArray(description)
+        ? <div class="my-2 text-justify">
+            {
+              description.map((line) => (
+                <p class:list={[line.level === "heading" ? "mt-2 font-medium first:mt-0" : "pl-5 font-light text-sm"]}>
+                  {line.text}
+                </p>
+              ))
+            }
+          </div>
+        : description && <p class="my-2 text-justify">{description}</p>
+    }
   </div>
 </div>

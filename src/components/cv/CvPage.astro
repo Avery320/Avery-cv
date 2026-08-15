@@ -25,9 +25,13 @@ const { content } = Astro.props as { content: CvContent };
     <div class="text-3xl w-full font-bold">{content.skillsHeading}</div>
   </div>
 
-  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
-    {content.skills.map((skill) => <li>{skill}</li>)}
-  </ul>
+  {
+    content.skillsAsLines
+      ? <div class="mb-10">{content.skills.map((skill) => <p>{skill}</p>)}</div>
+      : <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
+          {content.skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+  }
 
   {
     content.sections.map((section) => (

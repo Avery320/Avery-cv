@@ -25,6 +25,8 @@ const getHref = (href?: string) => {
       <TimeLineElement
         date={item.date}
         title={item.title}
+        titlePrefix={item.titlePrefix}
+        titleSuffix={item.titleSuffix}
         subtitle={item.subtitle}
         href={getHref(item.href)}
         description={item.description}
