@@ -1,0 +1,84 @@
+<label class="swap swap-rotate btn btn-ghost btn-circle" title="切換至深色模式">
+  <input
+    type="checkbox"
+    class="theme-toggle"
+    aria-label="切換至深色模式"
+  />
+
+  <svg
+    class="swap-off h-5 w-5 fill-current"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="M5.64 17.66 4.22 19.08l-1.41-1.41 1.42-1.42 1.41 1.41ZM11 22h2v-3h-2v3Zm8.78-2.92-1.42-1.42-1.41 1.41 1.42 1.42 1.41-1.41ZM18.36 6.34l1.42-1.42-1.41-1.41-1.42 1.42 1.41 1.41ZM22 11h-3v2h3v-2ZM13 2h-2v3h2V2ZM4.22 4.92 2.81 6.33l1.42 1.42 1.41-1.42-1.42-1.41ZM5 11H2v2h3v-2Zm7-4a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z" />
+  </svg>
+
+  <svg
+    class="swap-on h-5 w-5 fill-current"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="M21.64 13.65A9 9 0 0 1 10.35 2.36 9 9 0 1 0 21.64 13.65Z" />
+  </svg>
+</label>
+
+<script>
+  const LIGHT_THEME = "bumblebee";
+  const DARK_THEME = "halloween";
+
+  function getCurrentTheme() {
+    return document.documentElement.dataset.theme === DARK_THEME
+      ? DARK_THEME
+      : LIGHT_THEME;
+  }
+
+  function saveTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+
+    try {
+      localStorage.setItem("theme", theme);
+    } catch {
+      // The theme still changes when browser storage is unavailable.
+    }
+  }
+
+  function syncThemeToggles() {
+    const isDark = getCurrentTheme() === DARK_THEME;
+
+    document.querySelectorAll<HTMLInputElement>(".theme-toggle").forEach((toggle) => {
+      toggle.checked = isDark;
+      toggle.setAttribute("aria-label", isDark ? "切換至淺色模式" : "切換至深色模式");
+      toggle.parentElement?.setAttribute("title", isDark ? "切換至淺色模式" : "切換至深色模式");
+
+      if (toggle.dataset.themeToggleReady === "true") return;
+
+      toggle.dataset.themeToggleReady = "true";
+      toggle.addEventListener("change", () => {
+        saveTheme(toggle.checked ? DARK_THEME : LIGHT_THEME);
+        syncThemeToggles();
+      });
+    });
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    try {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === LIGHT_THEME || savedTheme === DARK_THEME) {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    } catch {
+      // Keep the current theme when browser storage is unavailable.
+    }
+
+    syncThemeToggles();
+  });
+
+  document.addEventListener("astro:before-swap", ((event: Event) => {
+    const swapEvent = event as Event & { newDocument: Document };
+    swapEvent.newDocument.documentElement.dataset.theme = getCurrentTheme();
+  }) as EventListener);
+
+  syncThemeToggles();
+</script>
