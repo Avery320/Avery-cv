@@ -1,0 +1,18 @@
+---
+import PortfolioListPage from "../../components/portfolio/PortfolioListPage.astro";
+
+const pendingProjects = [{
+  order: 2,
+  title: "Taichung Daheli Fude Temple",
+  desc: "English translation in progress.",
+  url: "#",
+}];
+---
+
+<PortfolioListPage
+  collection="projects"
+  route="projects"
+  title="Projects"
+  activeItemID="projects"
+  pendingProjects={pendingProjects}
+/>

@@ -1,8 +1,20 @@
-<label class="swap swap-rotate btn btn-ghost btn-circle" title="切換至深色模式">
+---
+const labels = Astro.currentLocale === "en"
+  ? { light: "Switch to light mode", dark: "Switch to dark mode" }
+  : { light: "切換至淺色模式", dark: "切換至深色模式" };
+---
+
+<label
+  class="swap swap-rotate btn btn-ghost btn-circle"
+  title={labels.dark}
+  data-theme-toggle
+  data-light-label={labels.light}
+  data-dark-label={labels.dark}
+>
   <input
     type="checkbox"
     class="theme-toggle"
-    aria-label="切換至深色模式"
+    aria-label={labels.dark}
   />
 
   <svg
@@ -49,8 +61,13 @@
 
     document.querySelectorAll<HTMLInputElement>(".theme-toggle").forEach((toggle) => {
       toggle.checked = isDark;
-      toggle.setAttribute("aria-label", isDark ? "切換至淺色模式" : "切換至深色模式");
-      toggle.parentElement?.setAttribute("title", isDark ? "切換至淺色模式" : "切換至深色模式");
+      const container = toggle.closest<HTMLElement>("[data-theme-toggle]");
+      const label = isDark ? container?.dataset.lightLabel : container?.dataset.darkLabel;
+
+      if (label) {
+        toggle.setAttribute("aria-label", label);
+        container?.setAttribute("title", label);
+      }
 
       if (toggle.dataset.themeToggleReady === "true") return;
 

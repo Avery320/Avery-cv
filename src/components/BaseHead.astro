@@ -9,17 +9,19 @@ export interface Props {
 	description: string;
 	image?: string;
 	ogType?: string;
+	alternates?: Array<{ lang: string; href: string }>;
 }
 
 const defaultImage = withBase('social_img.webp');
 const favicon = withBase('favicon.svg');
-const { title, description, image = defaultImage, ogType = 'website' } = Astro.props;
+const { title, description, image = defaultImage, ogType = 'website', alternates = [] } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href={favicon} />
+{alternates.map(({ lang, href }) => <link rel="alternate" hreflang={lang} href={new URL(href, Astro.url)} />)}
 <meta name="generator" content={Astro.generator} />
 
 <!-- Primary Meta Tags -->

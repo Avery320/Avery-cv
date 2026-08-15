@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "./HorizontalCard.astro";
+import { withBase } from "../lib/sitePath";
+
+const projectImage = withBase("post_img.webp");
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <div class="pb-12 mt-5">
+    <div class="text-xl py-1">Hey there 👋</div>
+    <div class="text-5xl font-bold">I'm Avery.</div>
+    <div class="text-3xl py-3 font-bold">Architecture and Robotics Developer</div>
+    <div class="py-2">
+      <p class="text-lg">
+        Focused on architectural digitalization, robotics systems, and design-to-fabrication workflows.
+      </p>
+    </div>
+  </div>
+
+  <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+
+  <HorizontalCard
+    title="Demo Project 1"
+    img={projectImage}
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="#"
+    badge="NEW"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Demo Project 2"
+    img={projectImage}
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="#"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Demo Project 3"
+    img={projectImage}
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="#"
+    badge="FOSS"
+  />
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getLocale, localizedPath } from "../../lib/i18n";
+
+const { entry, sectionTitle, sectionPath, activeItemID } = Astro.props;
+const locale = getLocale(Astro.currentLocale);
+const { Content } = await entry.render();
+const backLabel = locale === "en" ? `Back to ${sectionTitle}` : `返回 ${sectionTitle}`;
+---
+
+<BaseLayout title={entry.data.title} sideBarActiveItemID={activeItemID}>
+  <a class="btn btn-ghost mb-6" href={localizedPath(sectionPath, locale)}>← {backLabel}</a>
+  <article class="content-links prose max-w-none text-base-content prose-headings:text-base-content prose-strong:text-base-content prose-code:text-base-content prose-img:rounded-lg">
+    <Content />
+  </article>
+</BaseLayout>

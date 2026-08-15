@@ -1,0 +1,37 @@
+---
+import type { CvContent } from "../../data/cv";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CvTimelineSection from "./CvTimelineSection.astro";
+
+const { content } = Astro.props as { content: CvContent };
+---
+
+<BaseLayout
+  title={content.pageTitle}
+  description={content.pageDescription}
+  sideBarActiveItemID="cv"
+>
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">{content.profileHeading}</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    {content.profile.map((paragraph) => <p class="mb-4 last:mb-0">{paragraph}</p>)}
+  </div>
+
+  <CvTimelineSection heading={content.educationHeading} items={content.education} />
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">{content.skillsHeading}</div>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
+    {content.skills.map((skill) => <li>{skill}</li>)}
+  </ul>
+
+  {
+    content.sections.map((section) => (
+      <CvTimelineSection heading={section.heading} items={section.items} />
+    ))
+  }
+</BaseLayout>

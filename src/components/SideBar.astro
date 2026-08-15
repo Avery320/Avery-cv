@@ -3,8 +3,9 @@ import SideBarFooter from "./SideBarFooter.astro";
 import { Image } from "astro:assets";
 import SideBarMenu from "./SideBarMenu.astro";
 import { withBase } from "../lib/sitePath";
+import { getLocale, localizedPath } from "../lib/i18n";
 const { sideBarActiveItemID } = Astro.props;
-const homeUrl = withBase();
+const homeUrl = localizedPath("", getLocale(Astro.currentLocale));
 const profileImage = withBase("profile.png");
 ---
 

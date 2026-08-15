@@ -1,0 +1,12 @@
+---
+import PortfolioDetailPage from "../../../components/portfolio/PortfolioDetailPage.astro";
+import { getLocalizedContentPaths } from "../../../lib/portfolio";
+
+export async function getStaticPaths() {
+  return getLocalizedContentPaths("projects", "en");
+}
+
+const { entry } = Astro.props;
+---
+
+<PortfolioDetailPage entry={entry} sectionTitle="Projects" sectionPath="projects" activeItemID="projects" />

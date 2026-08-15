@@ -1,20 +1,22 @@
 ---
-import { withBase } from "../lib/sitePath";
+import { getLocale, localizedPath } from "../lib/i18n";
 
 const { sideBarActiveItemID } = Astro.props;
-const activeClass = "bg-base-300"; // For primary color replace with `active` class
+const locale = getLocale(Astro.currentLocale);
+const menuItems = [
+  { id: "home", label: "Home", path: "" },
+  { id: "projects", label: "Projects", path: "projects" },
+  { id: "robotics", label: "Robotics", path: "robotics" },
+  { id: "fabrication", label: "Fabrication", path: "fabrication" },
+  { id: "paramtric-design", label: "ParamtricDesign", path: "paramtric-design" },
+  { id: "cv", label: "CV", path: "cv" },
+];
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
-    <li><a class="py-3 text-base" id="home" href={withBase()}>Home</a></li>
-    <li><a class="py-3 text-base" id="projects" href={withBase("projects")}>Projects</a></li>
-    <li><a class="py-3 text-base" id="robotics" href={withBase("robotics")}>Robotics</a></li>
-    <li><a class="py-3 text-base" id="fabrication" href={withBase("fabrication")}>Fabrication</a></li>
-    <li><a class="py-3 text-base" id="paramtric-design" href={withBase("paramtric-design")}>ParamtricDesign</a></li>
-    <li><a class="py-3 text-base" id="cv" href={withBase("cv")}>CV</a></li>
+  {
+    menuItems.map(({ id, label, path }) => (
+      <li><a class:list={["py-3 text-base", { "bg-base-300": id === sideBarActiveItemID }]} href={localizedPath(path, locale)}>{label}</a></li>
+    ))
+  }
 </ul>
-
-<script define:vars={{ sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass }}>
-const activeItemElem = document.getElementById(sideBarActiveItemID);
-activeItemElem && activeItemElem.classList.add(activeClass);
-</script>

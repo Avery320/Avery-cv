@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HorizontalCard from "../HorizontalCard.astro";
+import { getLocale, localizedPath } from "../../lib/i18n";
+import { withBase } from "../../lib/sitePath";
+import { getContentSlug, getLocalizedEntries, type PortfolioCollection } from "../../lib/portfolio";
+
+interface PendingProject {
+  order: number;
+  title: string;
+  desc: string;
+  img?: string;
+  url: string;
+}
+
+const { collection, route, title, activeItemID, pendingProjects = [] } = Astro.props as {
+  collection: PortfolioCollection;
+  route: string;
+  title: string;
+  activeItemID: string;
+  pendingProjects?: PendingProject[];
+};
+const locale = getLocale(Astro.currentLocale);
+const fallbackImage = withBase("post_img.webp");
+const contentProjects = (await getLocalizedEntries(collection, locale))
+  .map((entry) => {
+    const cover = entry.data.cover;
+    const slug = getContentSlug(entry.slug);
+
+    return {
+      order: entry.data.order,
+      title: entry.data.title,
+      desc: entry.data.description,
+      img: typeof cover === "string" ? withBase(cover) : cover ?? fallbackImage,
+      url: localizedPath(`${route}/${slug}`, locale),
+    };
+  });
+const projects = [
+  ...contentProjects,
+  ...pendingProjects.map((project) => ({ ...project, img: project.img ?? fallbackImage })),
+].sort((a, b) => a.order - b.order);
+---
+
+<BaseLayout title={title} sideBarActiveItemID={activeItemID}>
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">{title}</div>
+  </div>
+
+  {
+    projects.map((project, index) => (
+      <>
+        <HorizontalCard
+          title={project.title}
+          img={project.img}
+          desc={project.desc}
+          url={project.url}
+          target="_self"
+        />
+        {index < projects.length - 1 && <div class="divider my-0" />}
+      </>
+    ))
+  }
+</BaseLayout>

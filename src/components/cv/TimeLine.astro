@@ -1,5 +1,5 @@
 ---
-const { title, subtitle, href, date } = Astro.props;
+const { title, subtitle, href, date, description } = Astro.props;
 ---
 
 <div class="flex">
@@ -9,7 +9,7 @@ const { title, subtitle, href, date } = Astro.props;
   </div>
   <div class="experience__data bd-grid px-5">
     <h3 class="font-semibold mb-1">
-      {date && <>{date}｜ </>}
+      {date}｜
       {
         href
           ? <a class="content-link" href={href}>{title}</a>
@@ -17,8 +17,6 @@ const { title, subtitle, href, date } = Astro.props;
       }
     </h3>
     <span class="font-light text-sm">{subtitle}</span>
-    <p class="my-2 text-justify">
-      <slot />
-    </p>
+    {description && <p class="my-2 text-justify">{description}</p>}
   </div>
 </div>

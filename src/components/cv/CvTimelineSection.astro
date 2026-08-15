@@ -1,0 +1,29 @@
+---
+import type { CvTimelineItem } from "../../data/cv";
+import { getLocale, localizedPath } from "../../lib/i18n";
+import TimeLineElement from "./TimeLine.astro";
+
+const { heading, items } = Astro.props as {
+  heading: string;
+  items: CvTimelineItem[];
+};
+const locale = getLocale(Astro.currentLocale);
+---
+
+<div class="mb-5">
+  <div class="text-3xl w-full font-bold">{heading}</div>
+</div>
+
+<div class="time-line-container mb-10">
+  {
+    items.map((item) => (
+      <TimeLineElement
+        date={item.date}
+        title={item.title}
+        subtitle={item.subtitle}
+        href={item.href ? localizedPath(item.href, locale) : undefined}
+        description={item.description}
+      />
+    ))
+  }
+</div>

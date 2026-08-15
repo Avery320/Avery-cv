@@ -1,7 +1,7 @@
 ---
-import { withBase } from "../lib/sitePath";
+import { getLocale, localizedPath } from "../lib/i18n";
 
-const homeUrl = withBase();
+const homeUrl = localizedPath("", getLocale(Astro.currentLocale));
 ---
 
 <div

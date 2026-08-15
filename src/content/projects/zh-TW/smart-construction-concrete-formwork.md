@@ -2,7 +2,7 @@
 title: "智慧建造：減碳預鑄免拆模鋼筋混凝土柱體工法"
 description: "數位雙生演算與機械手臂列印｜參與材料性能、結構測試，以及雙層列印模具路徑演算法開發。"
 order: 1
-cover: "../../assets/projects/3dcp.jpg"
+cover: "../../../assets/projects/3dcp.jpg"
 ---
 
 # 智慧建造：基於數位雙生演算與機械手臂列印發展減碳預鑄免拆模鋼筋混凝土柱體工法之研究

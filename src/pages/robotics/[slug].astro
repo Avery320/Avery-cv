@@ -1,29 +1,12 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { withBase } from "../../lib/sitePath";
+import PortfolioDetailPage from "../../components/portfolio/PortfolioDetailPage.astro";
+import { getLocalizedContentPaths } from "../../lib/portfolio";
 
 export async function getStaticPaths() {
-  const projects = await getCollection("robotics");
-
-  return projects.map((project) => ({
-    params: { slug: project.slug },
-    props: { project },
-  }));
+  return getLocalizedContentPaths("robotics", "zh-TW");
 }
 
-interface Props {
-  project: CollectionEntry<"robotics">;
-}
-
-const { project } = Astro.props;
-const { Content } = await project.render();
+const { entry } = Astro.props;
 ---
 
-<BaseLayout title={project.data.title} sideBarActiveItemID="robotics">
-  <a class="btn btn-ghost mb-6" href={withBase("robotics")}>← Back to Robotics</a>
-  <article class="content-links prose max-w-none text-base-content prose-headings:text-base-content prose-strong:text-base-content prose-code:text-base-content prose-img:rounded-lg">
-    <Content />
-  </article>
-</BaseLayout>
+<PortfolioDetailPage entry={entry} sectionTitle="Robotics" sectionPath="robotics" activeItemID="robotics" />

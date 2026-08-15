@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import SideBar from "../components/SideBar.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 import { ViewTransitions } from "astro:transitions";
+import { getLocale, getRoutePath, localizedPath } from "../lib/i18n";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
 
@@ -16,10 +17,24 @@ const {
   sideBarActiveItemID,
   ogType,
 } = Astro.props;
+const locale = getLocale(Astro.currentLocale);
+const routePath = getRoutePath(Astro.url.pathname);
+const targetLocale = locale === "en" ? "zh-TW" : "en";
+const languageSwitch = {
+  href: localizedPath(routePath, targetLocale),
+  label: locale === "en" ? "EN" : "中",
+  ariaLabel: locale === "en" ? "Switch to Traditional Chinese" : "切換至英文",
+};
+const alternates = includeSidebar
+  ? [
+      { lang: "zh-TW", href: localizedPath(routePath, "zh-TW") },
+      { lang: "en", href: localizedPath(routePath, "en") },
+    ]
+  : [];
 ---
 
 <!doctype html>
-<html lang="zh-Hant" data-theme="bumblebee">
+<html lang={locale} data-theme="bumblebee">
   <head>
     <script is:inline>
       (() => {
@@ -39,17 +54,29 @@ const {
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <BaseHead title={title} description={description} image={image} , ogType={ogType} />
+    <BaseHead title={title} description={description} image={image} ogType={ogType} alternates={alternates} />
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>
-    <div class="fixed right-4 top-4 z-50">
+    <div class="fixed right-4 top-4 z-50 flex items-center gap-1">
+      {
+        includeSidebar && (
+          <a
+            class="btn btn-ghost btn-circle text-sm font-semibold"
+            href={languageSwitch.href}
+            aria-label={languageSwitch.ariaLabel}
+            title={languageSwitch.ariaLabel}
+          >
+            {languageSwitch.label}
+          </a>
+        )
+      }
       <ThemeToggle />
     </div>
     <div class="bg-base-100 drawer lg:drawer-open">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content bg-base-100">
-        <Header title={SITE_TITLE} />
+        <Header />
         <div class="md:flex md:justify-center">
           <main class="p-6 pt-10 lg:max-w-[900px] max-w-[100vw]">
             <slot />
