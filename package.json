@@ -1,6 +1,12 @@
 {
-  "name": "astrofy",
+  "name": "avery-cv",
   "description": "A personal CV, projects, and robotics portfolio built with Astro and TailwindCSS.",
+  "homepage": "https://avery320.github.io/Avery-cv/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Avery320/Avery-cv.git"
+  },
+  "license": "MIT",
   "type": "module",
   "version": "3.0.0",
   "private": true,
