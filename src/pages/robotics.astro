@@ -1,9 +1,33 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { withBase } from "../lib/sitePath";
 
 const projectImage = withBase("post_img.webp");
+const migratedProjects = (await getCollection("robotics")).map((project) => ({
+  order: project.data.order,
+  title: project.data.title,
+  desc: project.data.description,
+  url: withBase(`robotics/${project.slug}`),
+}));
+
+const pendingProjects = [
+  {
+    order: 3,
+    title: "RoboSim Grasshopper Plugin",
+    desc: "Grasshopper Plugin｜將 RoboSim API 封裝為 Grasshopper 外掛，讓參數化設計流程能直接連接機器人系統。",
+    url: "#",
+  },
+  {
+    order: 8,
+    title: "Robotic Nonplanar Printing",
+    desc: "Python 與 Grasshopper 非平面切片演算法｜支援機械手臂增材製造。",
+    url: "#",
+  },
+];
+
+const projects = [...migratedProjects, ...pendingProjects].sort((a, b) => a.order - b.order);
 ---
 
 <BaseLayout title="Robotics" sideBarActiveItemID="robotics">
@@ -11,59 +35,18 @@ const projectImage = withBase("post_img.webp");
     <div class="text-3xl w-full font-bold">Robotics</div>
   </div>
 
-  <HorizontalCard
-    title="RoboSim"
-    img={projectImage}
-    desc="機器人人機協作介面｜整合機器人、幾何軟體與感測設備資訊，建立設計與操作共用的人機協作介面。"
-    url="#"
-    target="_self"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Hiwin Robot Arm Kinematics & hiwin_prc"
-    img={projectImage}
-    desc="HIWIN 機械手臂控制｜開發 Grasshopper 中的 HIWIN 機械手臂運動學與核心控制功能。"
-    url="#"
-    target="_self"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="RoboSim Grasshopper Plugin"
-    img={projectImage}
-    desc="Grasshopper Plugin｜將 RoboSim API 封裝為 Grasshopper 外掛，讓參數化設計流程能直接連接機器人系統。"
-    url="#"
-    target="_self"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="gh-ros2"
-    img={projectImage}
-    desc="Grasshopper 與 ROS 2 資料通訊｜串接幾何設計與機器人系統資訊。"
-    url="#"
-    target="_self"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="RoboSight"
-    img={projectImage}
-    desc="iOS 遠端監控與控制｜處理跨設備網路連線與即時資料交換。"
-    url="#"
-    target="_self"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="RealSense Detection"
-    img={projectImage}
-    desc="深度相機與視覺標記｜進行空間定位及現場放樣。"
-    url="#"
-    target="_self"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Robotic Nonplanar Printing"
-    img={projectImage}
-    desc="Python 與 Grasshopper 非平面切片演算法｜支援機械手臂增材製造。"
-    url="#"
-    target="_self"
-  />
+  {
+    projects.map((project, index) => (
+      <>
+        <HorizontalCard
+          title={project.title}
+          img={projectImage}
+          desc={project.desc}
+          url={project.url}
+          target="_self"
+        />
+        {index < projects.length - 1 && <div class="divider my-0" />}
+      </>
+    ))
+  }
 </BaseLayout>

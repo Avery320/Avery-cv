@@ -19,6 +19,8 @@ Personal CV and portfolio website featuring selected projects and robotics work.
 │       └── deploy.yml
 ├── public/
 │   ├── favicon.svg
+│   ├── images/
+│   │   └── robotics/
 │   ├── post_img.webp
 │   ├── profile.png
 │   ├── robots.txt
@@ -36,6 +38,14 @@ Personal CV and portfolio website featuring selected projects and robotics work.
 │   │   ├── SideBarFooter.astro
 │   │   ├── SideBarMenu.astro
 │   │   └── ThemeToggle.astro
+│   ├── content/
+│   │   ├── robotics/
+│   │   │   ├── gh-ros2.md
+│   │   │   ├── hiwin-robot-arm-kinematics.md
+│   │   │   ├── robosight.md
+│   │   │   ├── robosim.md
+│   │   │   └── ros-docker.md
+│   │   └── config.ts
 │   ├── layouts/
 │   │   └── BaseLayout.astro
 │   ├── lib/
@@ -45,6 +55,8 @@ Personal CV and portfolio website featuring selected projects and robotics work.
 │   │   ├── cv.astro
 │   │   ├── index.astro
 │   │   ├── projects.astro
+│   │   ├── robotics/
+│   │   │   └── [slug].astro
 │   │   └── robotics.astro
 │   ├── styles/
 │   │   └── global.css

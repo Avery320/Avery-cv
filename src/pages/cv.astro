@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
+import { withBase } from "../lib/sitePath";
 ---
 
 <BaseLayout title="蔡承恩 Avery Tsai｜CV" sideBarActiveItemID="cv">
@@ -119,12 +120,19 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="time-line-container mb-10">
-    <TimeLineElement title="2025.07 - 至今｜RoboSim" subtitle="機器人人機協作介面">
+    <TimeLineElement
+      date="2025.07 - 至今"
+      title="RoboSim"
+      subtitle="機器人人機協作介面"
+      href={withBase("robotics/robosim")}
+    >
       整合機器人、幾何軟體與感測設備資訊，建立設計與操作共用的人機協作介面。
     </TimeLineElement>
     <TimeLineElement
-      title="2025.05 - 2025.11｜Hiwin Robot Arm Kinematics & hiwin_prc"
+      date="2025.05 - 2025.11"
+      title="Hiwin Robot Arm Kinematics & hiwin_prc"
       subtitle="HIWIN 機械手臂控制"
+      href={withBase("robotics/hiwin-robot-arm-kinematics")}
     >
       開發 Grasshopper 中的 HIWIN 機械手臂運動學與核心控制功能。
     </TimeLineElement>
@@ -134,10 +142,20 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     >
       將 RoboSim API 封裝為 Grasshopper 外掛，讓參數化設計流程能直接連接機器人系統。
     </TimeLineElement>
-    <TimeLineElement title="2026.06 - 至今｜gh-ros2" subtitle="Grasshopper 與 ROS 2 資料通訊">
+    <TimeLineElement
+      date="2026.06 - 至今"
+      title="gh-ros2"
+      subtitle="Grasshopper 與 ROS 2 資料通訊"
+      href={withBase("robotics/gh-ros2")}
+    >
       串接幾何設計與機器人系統資訊。
     </TimeLineElement>
-    <TimeLineElement title="2026.05 - 至今｜RoboSight" subtitle="iOS 遠端監控與控制">
+    <TimeLineElement
+      date="2026.05 - 至今"
+      title="RoboSight"
+      subtitle="iOS 遠端監控與控制"
+      href={withBase("robotics/robosight")}
+    >
       處理跨設備網路連線與即時資料交換。
     </TimeLineElement>
     <TimeLineElement title="2025.07 - 2025.11｜RealSense Detection" subtitle="深度相機與視覺標記">

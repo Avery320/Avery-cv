@@ -1,3 +1,45 @@
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
+
+.content-link,
+.content-links a {
+    @apply text-primary no-underline;
+}
+
+.content-link:hover,
+.content-links a:hover {
+    @apply underline;
+}
+
+.content-link:focus-visible,
+.content-links a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+.image-grid {
+    display: grid;
+    gap: 1rem;
+    align-items: start;
+}
+
+.image-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.image-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.image-grid img {
+    width: 100%;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .image-grid-2,
+    .image-grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
