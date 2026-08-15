@@ -1,20 +1,25 @@
 import { defineCollection, z } from "astro:content";
 
-const portfolioSchema = z.object({
+const portfolioFields = {
   title: z.string(),
   description: z.string(),
   order: z.number(),
-  cover: z.string().optional(),
-});
+};
 
 const robotics = defineCollection({
   type: "content",
-  schema: portfolioSchema,
+  schema: z.object({
+    ...portfolioFields,
+    cover: z.string().optional(),
+  }),
 });
 
 const projects = defineCollection({
   type: "content",
-  schema: portfolioSchema,
+  schema: ({ image }) => z.object({
+    ...portfolioFields,
+    cover: image().optional(),
+  }),
 });
 
 export const collections = { projects, robotics };

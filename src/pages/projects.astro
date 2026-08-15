@@ -9,7 +9,7 @@ const migratedProjects = (await getCollection("projects")).map((project) => ({
   order: project.data.order,
   title: project.data.title,
   desc: project.data.description,
-  img: withBase(project.data.cover ?? "post_img.webp"),
+  img: project.data.cover ?? projectImage,
   url: withBase(`projects/${project.slug}`),
 }));
 

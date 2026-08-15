@@ -26,6 +26,11 @@ Personal CV and portfolio website featuring selected projects and robotics work.
 │   ├── robots.txt
 │   └── social_img.webp
 ├── src/
+│   ├── assets/
+│   │   └── projects/
+│   │       ├── 3dcp.jpg
+│   │       ├── graphcrete.jpg
+│   │       └── robotic-tectonic.JPG
 │   ├── components/
 │   │   ├── cv/
 │   │   │   └── TimeLine.astro

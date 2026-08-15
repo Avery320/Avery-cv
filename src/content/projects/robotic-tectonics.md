@@ -2,6 +2,7 @@
 title: "整合機械手臂與電腦視覺發展自組立低碳循環建材暨建構系統（II）"
 description: "機械手臂、深度相機與 LiDAR 整合｜開發可自主移動並執行牆體建造的機器人系統。"
 order: 4
+cover: "../../assets/projects/robotic-tectonic.JPG"
 ---
 
 # 整合機械手臂與電腦視覺發展自組立低碳循環建材暨建構系統
