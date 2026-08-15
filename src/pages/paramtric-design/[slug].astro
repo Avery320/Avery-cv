@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { withBase } from "../../lib/sitePath";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("paramtricDesign");
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: CollectionEntry<"paramtricDesign">;
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<BaseLayout title={project.data.title} sideBarActiveItemID="paramtric-design">
+  <a class="btn btn-ghost mb-6" href={withBase("paramtric-design")}>← Back to ParamtricDesign</a>
+  <article class="content-links prose max-w-none text-base-content prose-headings:text-base-content prose-strong:text-base-content prose-code:text-base-content prose-img:rounded-lg">
+    <Content />
+  </article>
+</BaseLayout>
