@@ -6,6 +6,7 @@ const robotics = defineCollection({
     title: z.string(),
     description: z.string(),
     order: z.number(),
+    cover: z.string().optional(),
   }),
 });
 

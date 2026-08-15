@@ -9,6 +9,7 @@ const migratedProjects = (await getCollection("robotics")).map((project) => ({
   order: project.data.order,
   title: project.data.title,
   desc: project.data.description,
+  img: withBase(project.data.cover ?? "post_img.webp"),
   url: withBase(`robotics/${project.slug}`),
 }));
 
@@ -17,12 +18,14 @@ const pendingProjects = [
     order: 3,
     title: "RoboSim Grasshopper Plugin",
     desc: "Grasshopper Plugin｜將 RoboSim API 封裝為 Grasshopper 外掛，讓參數化設計流程能直接連接機器人系統。",
+    img: projectImage,
     url: "#",
   },
   {
     order: 8,
     title: "Robotic Nonplanar Printing",
     desc: "Python 與 Grasshopper 非平面切片演算法｜支援機械手臂增材製造。",
+    img: projectImage,
     url: "#",
   },
 ];
@@ -40,7 +43,7 @@ const projects = [...migratedProjects, ...pendingProjects].sort((a, b) => a.orde
       <>
         <HorizontalCard
           title={project.title}
-          img={projectImage}
+          img={project.img}
           desc={project.desc}
           url={project.url}
           target="_self"
