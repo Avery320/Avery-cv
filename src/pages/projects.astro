@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import { withBase } from "../lib/sitePath";
+
+const projectImage = withBase("post_img.webp");
 ---
 
 <BaseLayout title="Projects" sideBarActiveItemID="projects">
@@ -10,7 +13,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
   <HorizontalCard
     title="智慧建造：減碳預鑄免拆模鋼筋混凝土柱體工法"
-    img="/post_img.webp"
+    img={projectImage}
     desc="數位雙生演算與機械手臂列印｜參與材料性能、結構測試，以及雙層列印模具路徑演算法開發。"
     url="#"
     target="_self"
@@ -18,7 +21,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
   <div class="divider my-0"></div>
   <HorizontalCard
     title="台中大河里福德祠"
-    img="/post_img.webp"
+    img={projectImage}
     desc="戴育澤建築師事務所｜以 AR 擴增實境疊合設計模型與現場資訊，協助磁磚放樣與施工定位。"
     url="#"
     target="_self"
@@ -26,7 +29,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
   <div class="divider my-0"></div>
   <HorizontalCard
     title="Graphcrete: Robotic 3D Concrete Printing for Mold Construction Methodology"
-    img="/post_img.webp"
+    img={projectImage}
     desc="Grasshopper 機器人製造工作流程｜建立標準化機器人製造工作流程，並開發分析與管理工具，以降低設計到製造之間的資料轉換成本。"
     url="#"
     target="_self"
@@ -34,7 +37,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
   <div class="divider my-0"></div>
   <HorizontalCard
     title="整合機械手臂與電腦視覺發展自組立低碳循環建材暨建構系統（II）"
-    img="/post_img.webp"
+    img={projectImage}
     desc="機械手臂、深度相機與 LiDAR 整合｜開發可自主移動並執行牆體建造的機器人系統。"
     url="#"
     target="_self"

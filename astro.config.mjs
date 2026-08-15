@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astrofy-template.netlify.app',
+  site: 'https://avery320.github.io',
+  base: '/Avery-cv',
   integrations: [mdx(), tailwind()]
 });
