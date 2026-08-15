@@ -106,6 +106,7 @@ export const zhTwCv: CvContent = {
           title: "台中大河里福德祠",
           subtitle: "戴育澤建築師事務所",
           description: "以 AR 擴增實境疊合設計模型與現場資訊，協助磁磚放樣與施工定位。",
+          href: "https://www.facebook.com/story.php?story_fbid=1062206209262854&id=100064204530132&mibextid=wwXIfr&rdid=Ka9KwvjjXf185RZk",
         },
         {
           date: "2024.03 - 2024.11",
@@ -352,6 +353,7 @@ export const enCv: CvContent = {
           title: "Taichung Daheli Fude Temple",
           subtitle: "Yu-Tse Dai Architects & Associates",
           description: "Applied augmented reality to overlay design models with on-site conditions, supporting tile layout planning and construction positioning.",
+          href: "https://www.facebook.com/story.php?story_fbid=1062206209262854&id=100064204530132&mibextid=wwXIfr&rdid=Ka9KwvjjXf185RZk",
         },
         {
           date: "2024.03 - 2024.11",

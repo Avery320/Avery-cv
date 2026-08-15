@@ -8,6 +8,11 @@ const { heading, items } = Astro.props as {
   items: CvTimelineItem[];
 };
 const locale = getLocale(Astro.currentLocale);
+const getHref = (href?: string) => {
+  if (!href) return undefined;
+  if (href.startsWith("http://") || href.startsWith("https://")) return href;
+  return localizedPath(href, locale);
+};
 ---
 
 <div class="mb-5">
@@ -21,7 +26,7 @@ const locale = getLocale(Astro.currentLocale);
         date={item.date}
         title={item.title}
         subtitle={item.subtitle}
-        href={item.href ? localizedPath(item.href, locale) : undefined}
+        href={getHref(item.href)}
         description={item.description}
       />
     ))

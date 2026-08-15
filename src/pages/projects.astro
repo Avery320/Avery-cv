@@ -1,12 +1,5 @@
 ---
 import PortfolioListPage from "../components/portfolio/PortfolioListPage.astro";
-
-const pendingProjects = [{
-  order: 2,
-  title: "台中大河里福德祠",
-  desc: "戴育澤建築師事務所｜以 AR 擴增實境疊合設計模型與現場資訊，協助磁磚放樣與施工定位。",
-  url: "#",
-}];
 ---
 
 <PortfolioListPage
@@ -14,5 +7,4 @@ const pendingProjects = [{
   route="projects"
   title="Projects"
   activeItemID="projects"
-  pendingProjects={pendingProjects}
 />
