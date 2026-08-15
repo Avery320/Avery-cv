@@ -1,3 +1,13 @@
+html[data-theme="bumblebee"] {
+    --theme-purple: 45.98% 0.248 305.03;
+    --p: var(--theme-purple);
+    --pc: 100% 0 0;
+    --s: var(--theme-purple);
+    --sc: 100% 0 0;
+    --a: var(--theme-purple);
+    --ac: 100% 0 0;
+}
+
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
