@@ -10,7 +10,7 @@ const backLabel = locale === "en" ? `Back to ${sectionTitle}` : `返回 ${sectio
 
 <BaseLayout title={entry.data.title} sideBarActiveItemID={activeItemID}>
   <a class="btn btn-ghost mb-6" href={localizedPath(sectionPath, locale)}>← {backLabel}</a>
-  <article class="content-links prose max-w-none text-base-content prose-headings:text-base-content prose-strong:text-base-content prose-code:text-base-content prose-img:rounded-lg">
+  <article class="content-links prose max-w-none leading-6 text-base-content prose-headings:text-base-content prose-strong:text-base-content prose-code:text-base-content prose-img:rounded-lg">
     <Content />
   </article>
 </BaseLayout>

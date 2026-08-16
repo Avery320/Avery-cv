@@ -8,7 +8,7 @@ const { title, titlePrefix, titleSuffix, subtitle, href, date, description } = A
     <span class="education__line bg-primary block h-full w-[2px] translate-x-[4px]"></span>
   </div>
   <div class="experience__data bd-grid px-5">
-    <h3 class="font-semibold mb-1">
+    <h3 class="text-xl font-bold mb-1">
       {date}｜ <span>{titlePrefix}{href ? <a class="content-link" href={href}>{title}</a> : title}{titleSuffix}</span>
     </h3>
     {subtitle && <span class="font-light text-sm">{subtitle}</span>}

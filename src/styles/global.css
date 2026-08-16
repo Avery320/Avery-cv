@@ -1,10 +1,10 @@
 html[data-theme="bumblebee"] {
-    --theme-purple: 45.98% 0.248 305.03;
-    --p: var(--theme-purple);
+    --theme-deep-blue: 37.9% 0.146 265.522;
+    --p: var(--theme-deep-blue);
     --pc: 100% 0 0;
-    --s: var(--theme-purple);
+    --s: var(--theme-deep-blue);
     --sc: 100% 0 0;
-    --a: var(--theme-purple);
+    --a: var(--theme-deep-blue);
     --ac: 100% 0 0;
 }
 
