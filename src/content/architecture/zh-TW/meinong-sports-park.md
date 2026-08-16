@@ -15,7 +15,6 @@ cover: "images/architecture/meinong-sports-park/cover.jpg"
 
 - 景觀座椅造型設計
 - 水泥 3D 列印製程導向的形體調整
-- 設計與製造條件整合
 
 <h2>
   <a
