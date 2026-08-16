@@ -2,6 +2,7 @@
 title: "RoboSim"
 description: "機器人人機協作介面｜整合機器人、幾何軟體與感測設備資訊，建立設計與操作共用的人機協作介面。"
 order: 1
+cover: "images/robotics/robosim/cover.png"
 ---
 
 # RoboSim

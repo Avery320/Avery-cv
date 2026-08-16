@@ -1,7 +1,7 @@
 ---
 title: "Hiwin Robot Arm Kinematics & hiwin_prc"
 description: "HIWIN 機械手臂控制｜開發 Grasshopper 中的 HIWIN 機械手臂運動學與核心控制功能。"
-order: 2
+order: 4
 cover: "images/robotics/hiwin-robot-arm-kinematics/rviz.png"
 ---
 

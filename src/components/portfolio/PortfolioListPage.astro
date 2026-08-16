@@ -23,6 +23,7 @@ const { collection, route, title, activeItemID, pendingProjects = [] } = Astro.p
 const locale = getLocale(Astro.currentLocale);
 const fallbackImage = withBase("post_img.webp");
 const contentProjects = (await getLocalizedEntries(collection, locale))
+  .filter((entry) => !entry.data.hidden)
   .map((entry) => {
     const cover = entry.data.cover;
     const slug = getContentSlug(entry.slug);

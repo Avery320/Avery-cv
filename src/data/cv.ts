@@ -172,6 +172,14 @@ export const zhTwCv: CvContent = {
       heading: "Work Experience",
       items: [
         {
+          date: "2026.08 - 至今",
+          title: "聯雨設計製造有限公司",
+          href: "https://urdt.tw/",
+          description: [
+            { text: "機器人研發工程師", level: "heading" },
+          ],
+        },
+        {
           date: "2022.02 - 2023.02",
           title: "趙建銘建築師事務所",
           href: "https://www.cmchaoarch.com",
@@ -411,6 +419,14 @@ export const enCv: CvContent = {
     {
       heading: "Work Experience",
       items: [
+        {
+          date: "2026.08 - Present",
+          title: "聯雨設計製造有限公司",
+          href: "https://urdt.tw/",
+          description: [
+            { text: "Robotics R&D Engineer", level: "heading" },
+          ],
+        },
         {
           date: "2022.02 - 2023.02",
           title: "Chao Chien-Ming Architects & Associates",

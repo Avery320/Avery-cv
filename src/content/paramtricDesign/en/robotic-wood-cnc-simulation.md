@@ -2,6 +2,7 @@
 title: "Robotic Wood CNC Simulation"
 description: "English translation in progress."
 order: 4
+cover: "images/paramtric-design/robotic-wood-cnc-simulation/cover.jpg"
 ---
 
 # Robotic Wood CNC Simulation

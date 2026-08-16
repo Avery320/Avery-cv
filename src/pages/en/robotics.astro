@@ -1,12 +1,5 @@
 ---
 import PortfolioListPage from "../../components/portfolio/PortfolioListPage.astro";
-
-const pendingProjects = [{
-  order: 3,
-  title: "RoboSim Grasshopper Plugin",
-  desc: "English translation in progress.",
-  url: "#",
-}];
 ---
 
 <PortfolioListPage
@@ -14,5 +7,4 @@ const pendingProjects = [{
   route="robotics"
   title="Robotics"
   activeItemID="robotics"
-  pendingProjects={pendingProjects}
 />

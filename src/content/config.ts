@@ -4,6 +4,7 @@ const portfolioFields = {
   title: z.string(),
   description: z.string(),
   order: z.number(),
+  hidden: z.boolean().optional(),
 };
 
 const robotics = defineCollection({

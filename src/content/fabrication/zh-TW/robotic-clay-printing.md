@@ -2,6 +2,7 @@
 title: "Robotic Clay Printing"
 description: "陶土機器人列印｜進行列印測試、製造流程教學與學生作品指導。"
 order: 2
+cover: "images/fabrication/robotic-clay-printing/cover.jpeg"
 ---
 
 # Robotic Clay Printing

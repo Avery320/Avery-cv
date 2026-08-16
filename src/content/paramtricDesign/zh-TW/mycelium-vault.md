@@ -2,6 +2,7 @@
 title: "Mycelium Vault"
 description: "菌絲體材料與演算設計｜結合 Cairo Pentagonal Tiling 與 Truchet Pattern 發展拱頂構築。"
 order: 1
+cover: "images/paramtric-design/mycelium-vault/cover.jpg"
 ---
 
 # Mycelium Vault

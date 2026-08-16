@@ -19,8 +19,6 @@ const { content } = Astro.props as { content: CvContent };
     {content.profile.map((paragraph) => <p class="mb-4 last:mb-0">{paragraph}</p>)}
   </div>
 
-  <CvTimelineSection heading={content.educationHeading} items={content.education} />
-
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">{content.skillsHeading}</div>
   </div>
@@ -32,6 +30,8 @@ const { content } = Astro.props as { content: CvContent };
           {content.skills.map((skill) => <li>{skill}</li>)}
         </ul>
   }
+
+  <CvTimelineSection heading={content.educationHeading} items={content.education} />
 
   {
     content.sections.map((section) => (
