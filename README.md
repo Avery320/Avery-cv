@@ -1,6 +1,6 @@
 # Avery Tsai — CV and Portfolio
 
-Personal CV and portfolio website featuring selected projects and robotics work.
+Bilingual personal CV and portfolio website featuring architecture, robotics, fabrication, and parametric design work.
 
 - [Live website](https://avery320.github.io/Avery-cv/)
 - [GitHub profile](https://github.com/Avery320)
@@ -10,6 +10,9 @@ Personal CV and portfolio website featuring selected projects and robotics work.
 - CV
 - Projects
 - Robotics
+- Architecture
+- Fabrication
+- Parametric Design
 
 ## Project Structure
 
@@ -18,56 +21,100 @@ Personal CV and portfolio website featuring selected projects and robotics work.
 │   └── workflows/
 │       └── deploy.yml
 ├── public/
-│   ├── favicon.svg
 │   ├── images/
+│   │   ├── architecture/
+│   │   │   └── meinong-sports-park/
+│   │   ├── fabrication/
+│   │   ├── paramtric-design/
 │   │   └── robotics/
+│   ├── favicon.svg
 │   ├── post_img.webp
 │   ├── profile.png
+│   ├── profile_02.JPG
 │   ├── robots.txt
 │   └── social_img.webp
 ├── src/
 │   ├── assets/
-│   │   └── projects/
-│   │       ├── 3dcp.jpg
-│   │       ├── graphcrete.jpg
-│   │       └── robotic-tectonic.JPG
+│   │   └── projects/                 # Astro-optimized project covers
 │   ├── components/
 │   │   ├── cv/
+│   │   │   ├── CvPage.astro
+│   │   │   ├── CvTimelineSection.astro
 │   │   │   └── TimeLine.astro
+│   │   ├── portfolio/
+│   │   │   ├── PortfolioDetailPage.astro
+│   │   │   └── PortfolioListPage.astro
 │   │   ├── BaseHead.astro
 │   │   ├── Card.astro
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
+│   │   ├── HomePage.astro
 │   │   ├── HorizontalCard.astro
 │   │   ├── SideBar.astro
 │   │   ├── SideBarFooter.astro
 │   │   ├── SideBarMenu.astro
 │   │   └── ThemeToggle.astro
 │   ├── content/
+│   │   ├── architecture/
+│   │   │   ├── en/
+│   │   │   └── zh-TW/
+│   │   ├── fabrication/
+│   │   │   ├── en/
+│   │   │   └── zh-TW/
+│   │   ├── paramtricDesign/          # Parametric Design content collection
+│   │   │   ├── en/
+│   │   │   └── zh-TW/
 │   │   ├── projects/
-│   │   │   ├── graphcrete.md
-│   │   │   ├── robotic-tectonics.md
-│   │   │   └── smart-construction-concrete-formwork.md
+│   │   │   ├── en/
+│   │   │   └── zh-TW/
 │   │   ├── robotics/
-│   │   │   ├── gh-ros2.md
-│   │   │   ├── hiwin-robot-arm-kinematics.md
-│   │   │   ├── robosight.md
-│   │   │   ├── robosim.md
-│   │   │   └── ros-docker.md
+│   │   │   ├── en/
+│   │   │   └── zh-TW/
 │   │   └── config.ts
+│   ├── data/
+│   │   └── cv.ts
 │   ├── layouts/
 │   │   └── BaseLayout.astro
 │   ├── lib/
+│   │   ├── i18n.ts
+│   │   ├── portfolio.ts
 │   │   └── sitePath.ts
 │   ├── pages/
-│   │   ├── 404.astro
-│   │   ├── cv.astro
-│   │   ├── index.astro
+│   │   ├── en/                       # English routes
+│   │   │   ├── architecture/
+│   │   │   │   └── [slug].astro
+│   │   │   ├── fabrication/
+│   │   │   │   └── [slug].astro
+│   │   │   ├── paramtric-design/
+│   │   │   │   └── [slug].astro
+│   │   │   ├── projects/
+│   │   │   │   └── [slug].astro
+│   │   │   ├── robotics/
+│   │   │   │   └── [slug].astro
+│   │   │   ├── architecture.astro
+│   │   │   ├── cv.astro
+│   │   │   ├── fabrication.astro
+│   │   │   ├── index.astro
+│   │   │   ├── paramtric-design.astro
+│   │   │   ├── projects.astro
+│   │   │   └── robotics.astro
+│   │   ├── architecture/             # Traditional Chinese detail routes
+│   │   │   └── [slug].astro
+│   │   ├── fabrication/
+│   │   │   └── [slug].astro
+│   │   ├── paramtric-design/
+│   │   │   └── [slug].astro
 │   │   ├── projects/
 │   │   │   └── [slug].astro
-│   │   ├── projects.astro
 │   │   ├── robotics/
 │   │   │   └── [slug].astro
+│   │   ├── 404.astro
+│   │   ├── architecture.astro
+│   │   ├── cv.astro
+│   │   ├── fabrication.astro
+│   │   ├── index.astro
+│   │   ├── paramtric-design.astro
+│   │   ├── projects.astro
 │   │   └── robotics.astro
 │   ├── styles/
 │   │   └── global.css
@@ -79,6 +126,8 @@ Personal CV and portfolio website featuring selected projects and robotics work.
 ├── tailwind.config.cjs
 └── tsconfig.json
 ```
+
+Portfolio entries are stored as Astro content collections. Each section keeps matching Markdown files under `zh-TW/` and `en/`; the filename is also used as the project slug. The default locale is Traditional Chinese, while English pages use the `/en/` prefix.
 
 ## Development
 
