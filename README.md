@@ -42,6 +42,7 @@ Bilingual personal CV and portfolio website featuring architecture, robotics, fa
 │   │   │   ├── CvTimelineSection.astro
 │   │   │   └── TimeLine.astro
 │   │   ├── portfolio/
+│   │   │   ├── FeaturedProjectCard.astro
 │   │   │   ├── PortfolioDetailPage.astro
 │   │   │   └── PortfolioListPage.astro
 │   │   ├── BaseHead.astro
@@ -72,7 +73,8 @@ Bilingual personal CV and portfolio website featuring architecture, robotics, fa
 │   │   │   └── zh-TW/
 │   │   └── config.ts
 │   ├── data/
-│   │   └── cv.ts
+│   │   ├── cv.ts
+│   │   └── projects.ts
 │   ├── layouts/
 │   │   └── BaseLayout.astro
 │   ├── lib/
@@ -128,6 +130,27 @@ Bilingual personal CV and portfolio website featuring architecture, robotics, fa
 ```
 
 Portfolio entries are stored as Astro content collections. Each section keeps matching Markdown files under `zh-TW/` and `en/`; the filename is also used as the project slug. The default locale is Traditional Chinese, while English pages use the `/en/` prefix.
+
+## Featured Projects
+
+Home page featured projects are defined in `src/data/projects.ts` and rendered by `FeaturedProjectCard.astro`. Each project keeps its localized internal detail page separate from any externally deployed resources:
+
+```ts
+{
+  id: "robosim",
+  detailPath: "robotics/robosim",
+  resources: [
+    {
+      id: "developer-guide",
+      title: "Developer Guide",
+      url: "https://example.com/document/",
+      updatedAt: "2026-08-11T09:32:58+08:00",
+    },
+  ],
+}
+```
+
+`updatedAt` is currently a manually maintained snapshot of the source path's latest commit date. The site does not yet fetch private repository metadata or synchronize these dates through GitHub Actions.
 
 ## Development
 

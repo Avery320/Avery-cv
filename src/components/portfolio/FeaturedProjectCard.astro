@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+import type { FeaturedProject } from "../../data/projects";
+import type { Locale } from "../../lib/i18n";
+import { localizedPath } from "../../lib/i18n";
+import { withBase } from "../../lib/sitePath";
+
+const { project, locale } = Astro.props as {
+  project: FeaturedProject;
+  locale: Locale;
+};
+const detailUrl = localizedPath(project.detailPath, locale);
+const formatDate = (value: string) =>
+  new Intl.DateTimeFormat(locale === "en" ? "en-US" : "zh-TW", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    timeZone: "Asia/Taipei",
+  }).format(new Date(value));
+---
+
+<article class="rounded-lg bg-base-100 transition ease-in-out hover:scale-[102%] hover:shadow-xl">
+  <div class="flex flex-col gap-4 p-4 md:flex-row md:items-start">
+    <a
+      class="block shrink-0 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+      href={detailUrl}
+      aria-label={project.title}
+    >
+      <Image
+        src={withBase(project.image)}
+        width={750}
+        height={422}
+        format="webp"
+        alt={project.title}
+        class="w-full rounded-lg md:w-[13rem]"
+      />
+    </a>
+
+    <div class="min-w-0 grow">
+      <div class:list={[project.resources.length > 0 && "border-b border-base-300 pb-3"]}>
+        <h2 class="text-xl font-bold">
+          <a
+            class="inline-flex items-center gap-2 rounded-sm underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+            href={detailUrl}
+          >
+            {project.title} <span aria-hidden="true">→</span>
+          </a>
+        </h2>
+        <p class="py-1">{project.description}</p>
+      </div>
+
+      {
+        project.resources.length > 0 && (
+          <div class="pt-3">
+            <ul class="space-y-2" aria-label="Project resources">
+              {project.resources.map((resource) => (
+                <li class="flex items-center justify-between gap-3">
+                  <a
+                    class="btn btn-sm transition-colors duration-200 hover:border-primary hover:bg-primary hover:text-primary-content focus-visible:border-primary focus-visible:bg-primary focus-visible:text-primary-content"
+                    href={resource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {resource.title} <span aria-hidden="true">↗</span>
+                  </a>
+                  {resource.updatedAt && (
+                    <time class="shrink-0 text-[10px] text-base-content/60" datetime={resource.updatedAt}>
+                      Updated {formatDate(resource.updatedAt)}
+                    </time>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</article>
