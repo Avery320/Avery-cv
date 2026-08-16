@@ -5,7 +5,8 @@ import { getLocale, localizedPath } from "../lib/i18n";
 import { withBase } from "../lib/sitePath";
 
 const locale = getLocale(Astro.currentLocale);
-const projectImage = withBase("post_img.webp");
+const robosimImage = withBase("images/robotics/robosim/cover.png");
+const ghRos2Image = withBase("images/robotics/gh-ros2/cover.jpg");
 const pageLinks = [
   { label: "CV", path: "cv" },
   { label: "Projects", path: "projects" },
@@ -44,25 +45,18 @@ const pageLinksLabel = locale === "en" ? "Portfolio pages" : "作品頁面";
   <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img={projectImage}
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    title="RoboSim"
+    img={robosimImage}
+    desc="Human-Computer Interface | ROS | Robotics | Grasshopper"
+    url={localizedPath("robotics/robosim", locale)}
+    target="_self"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img={projectImage}
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img={projectImage}
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    title="gh-ros2"
+    img={ghRos2Image}
+    desc="Grasshopper Plugin | ROS"
+    url={localizedPath("robotics/gh-ros2", locale)}
+    target="_self"
   />
 </BaseLayout>
