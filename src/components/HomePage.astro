@@ -1,9 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "./HorizontalCard.astro";
+import { getLocale, localizedPath } from "../lib/i18n";
 import { withBase } from "../lib/sitePath";
 
+const locale = getLocale(Astro.currentLocale);
 const projectImage = withBase("post_img.webp");
+const pageLinks = [
+  { label: "CV", path: "cv" },
+  { label: "Projects", path: "projects" },
+  { label: "Robotics", path: "robotics" },
+  { label: "Architecture", path: "architecture" },
+  { label: "Fabrication", path: "fabrication" },
+  { label: "ParametricDesign", path: "paramtric-design" },
+];
+const pageLinksLabel = locale === "en" ? "Portfolio pages" : "作品頁面";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -16,6 +27,18 @@ const projectImage = withBase("post_img.webp");
         Focused on architectural digitalization, robotics systems, and design-to-fabrication workflows.
       </p>
     </div>
+    <nav class="mt-8 flex flex-wrap gap-2" aria-label={pageLinksLabel}>
+      {
+        pageLinks.map(({ label, path }) => (
+          <a
+            class="btn btn-sm transition-colors duration-200 hover:border-primary hover:bg-primary hover:text-primary-content focus-visible:border-primary focus-visible:bg-primary focus-visible:text-primary-content"
+            href={localizedPath(path, locale)}
+          >
+            {label}
+          </a>
+        ))
+      }
+    </nav>
   </div>
 
   <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
