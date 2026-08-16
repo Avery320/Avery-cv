@@ -2,6 +2,7 @@
 title: "美濃運動公園"
 description: "Architecture Design | Concrete Printing"
 order: 2
+cover: "images/architecture/meinong-sports-park/cover.jpg"
 ---
 
 # 美濃運動公園
