@@ -7,4 +7,4 @@ cover: "images/paramtric-design/mycelium-vault/cover.jpg"
 
 # Mycelium Vault
 
-> English translation is in progress.
+English verision is in progress.

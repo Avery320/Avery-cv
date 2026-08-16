@@ -7,4 +7,4 @@ hidden: true
 
 # ROS Docker
 
-> English translation is in progress.
+English verision is in progress.

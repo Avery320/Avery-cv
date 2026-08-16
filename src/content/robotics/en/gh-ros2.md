@@ -7,4 +7,4 @@ cover: "images/robotics/gh-ros2/cover.jpg"
 
 # gh-ros2
 
-> English translation is in progress.
+English verision is in progress.

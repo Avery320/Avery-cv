@@ -7,4 +7,4 @@ cover: "images/fabrication/robotic-clay-printing/cover.jpeg"
 
 # Robotic Clay Printing
 
-> English translation is in progress.
+English verision is in progress.

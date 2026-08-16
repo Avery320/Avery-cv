@@ -1,7 +1,7 @@
 import { getCollection } from "astro:content";
 import type { Locale } from "./i18n";
 
-export type PortfolioCollection = "fabrication" | "paramtricDesign" | "projects" | "robotics";
+export type PortfolioCollection = "architecture" | "fabrication" | "paramtricDesign" | "projects" | "robotics";
 
 export const getLocalizedEntries = async (collection: PortfolioCollection, locale: Locale) => {
   const entries = await getCollection(collection);

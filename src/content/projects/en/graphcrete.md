@@ -5,6 +5,6 @@ order: 3
 cover: "../../../assets/projects/graphcrete.jpg"
 ---
 
-# Graphcrete
+# Graphcrete: Robotic 3D Concrete Printing for Mold Construction Methodology
 
-> English translation is in progress.
+English verision is in progress.

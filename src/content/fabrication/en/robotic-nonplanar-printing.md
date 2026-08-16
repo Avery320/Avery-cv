@@ -7,4 +7,4 @@ cover: "images/fabrication/robotic-nonplanar-printing/cover.jpg"
 
 # Robotic Nonplanar Printing
 
-> English translation is in progress.
+English verision is in progress.

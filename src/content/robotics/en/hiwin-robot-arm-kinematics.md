@@ -5,6 +5,6 @@ order: 4
 cover: "images/robotics/hiwin-robot-arm-kinematics/rviz.png"
 ---
 
-# Hiwin Robot Arm Kinematics
+# Hiwin Robot Arm Kinematics & hiwin_prc
 
-> English translation is in progress.
+English verision is in progress.

@@ -7,4 +7,4 @@ cover: "images/robotics/robosim/cover.png"
 
 # RoboSim
 
-> English translation is in progress.
+English verision is in progress.

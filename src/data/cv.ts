@@ -185,7 +185,7 @@ export const zhTwCv: CvContent = {
           href: "https://www.cmchaoarch.com",
           description: [
             { text: "專案設計師", level: "heading" },
-            { text: "瑞平安居社會住宅｜專案設計師", level: "detail" },
+            { text: "瑞屏安居社會住宅｜專案設計師", level: "detail" },
             { text: "小港運動中心｜專案設計師", level: "detail" },
             { text: "美濃運動公園｜水泥 3D 列印景觀座椅造型設計", level: "detail" },
             { text: "鼓山魚市場、高雄凱旋青樹社會住宅、福山安居｜協助圖面繪製、報告書製作", level: "detail" },

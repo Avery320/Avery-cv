@@ -7,4 +7,4 @@ cover: "images/paramtric-design/customized-marching-cubes/cover.jpg"
 
 # Customized Marching Cubes
 
-> English translation is in progress.
+English verision is in progress.

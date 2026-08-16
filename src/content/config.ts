@@ -15,6 +15,14 @@ const robotics = defineCollection({
   }),
 });
 
+const architecture = defineCollection({
+  type: "content",
+  schema: z.object({
+    ...portfolioFields,
+    cover: z.string().optional(),
+  }),
+});
+
 const fabrication = defineCollection({
   type: "content",
   schema: z.object({
@@ -39,4 +47,4 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { fabrication, paramtricDesign, projects, robotics };
+export const collections = { architecture, fabrication, paramtricDesign, projects, robotics };

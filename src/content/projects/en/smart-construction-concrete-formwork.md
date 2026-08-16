@@ -5,6 +5,6 @@ order: 1
 cover: "../../../assets/projects/3dcp.jpg"
 ---
 
-# Smart Construction Concrete Formwork
+# Smart Construction: Low-Carbon Precast Stay-in-Place Reinforced Concrete Column System
 
-> English translation is in progress.
+English verision is in progress.
