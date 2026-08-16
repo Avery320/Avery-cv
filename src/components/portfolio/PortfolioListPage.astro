@@ -1,45 +1,33 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import HorizontalCard from "../HorizontalCard.astro";
-import { getLocale, localizedPath } from "../../lib/i18n";
-import { withBase } from "../../lib/sitePath";
+import FeaturedProjectCard from "./FeaturedProjectCard.astro";
+import { getPortfolioPageResources, type FeaturedProject } from "../../data/projects";
+import { getLocale } from "../../lib/i18n";
 import { getContentSlug, getLocalizedEntries, type PortfolioCollection } from "../../lib/portfolio";
 
-interface PendingProject {
-  order: number;
-  title: string;
-  desc: string;
-  img?: string;
-  url: string;
-}
-
-const { collection, route, title, activeItemID, pendingProjects = [] } = Astro.props as {
+const { collection, route, title, activeItemID } = Astro.props as {
   collection: PortfolioCollection;
   route: string;
   title: string;
   activeItemID: string;
-  pendingProjects?: PendingProject[];
 };
 const locale = getLocale(Astro.currentLocale);
-const fallbackImage = withBase("post_img.webp");
-const contentProjects = (await getLocalizedEntries(collection, locale))
+const projects: FeaturedProject[] = (await getLocalizedEntries(collection, locale))
   .filter((entry) => !entry.data.hidden)
+  .sort((a, b) => a.data.order - b.data.order)
   .map((entry) => {
-    const cover = entry.data.cover;
     const slug = getContentSlug(entry.slug);
+    const detailPath = `${route}/${slug}`;
 
     return {
-      order: entry.data.order,
+      id: slug,
       title: entry.data.title,
-      desc: entry.data.description,
-      img: typeof cover === "string" ? withBase(cover) : cover ?? fallbackImage,
-      url: localizedPath(`${route}/${slug}`, locale),
+      description: entry.data.description,
+      detailPath,
+      image: entry.data.cover ?? "post_img.webp",
+      resources: getPortfolioPageResources(detailPath),
     };
   });
-const projects = [
-  ...contentProjects,
-  ...pendingProjects.map((project) => ({ ...project, img: project.img ?? fallbackImage })),
-].sort((a, b) => a.order - b.order);
 ---
 
 <BaseLayout title={title} sideBarActiveItemID={activeItemID}>
@@ -50,13 +38,7 @@ const projects = [
   {
     projects.map((project, index) => (
       <>
-        <HorizontalCard
-          title={project.title}
-          img={project.img}
-          desc={project.desc}
-          url={project.url}
-          target="_self"
-        />
+        <FeaturedProjectCard project={project} locale={locale} />
         {index < projects.length - 1 && <div class="divider my-0" />}
       </>
     ))

@@ -46,11 +46,9 @@ Bilingual personal CV and portfolio website featuring architecture, robotics, fa
 │   │   │   ├── PortfolioDetailPage.astro
 │   │   │   └── PortfolioListPage.astro
 │   │   ├── BaseHead.astro
-│   │   ├── Card.astro
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
 │   │   ├── HomePage.astro
-│   │   ├── HorizontalCard.astro
 │   │   ├── SideBar.astro
 │   │   ├── SideBarFooter.astro
 │   │   ├── SideBarMenu.astro
@@ -133,7 +131,7 @@ Portfolio entries are stored as Astro content collections. Each section keeps ma
 
 ## Featured Projects
 
-Home page featured projects are defined in `src/data/projects.ts` and rendered by `FeaturedProjectCard.astro`. Each project keeps its localized internal detail page separate from any externally deployed resources:
+Home page featured projects and portfolio page resources are defined in `src/data/projects.ts` and rendered by `FeaturedProjectCard.astro`. Shared resources use their `detailPath` as a single lookup key, while each project keeps its localized internal detail page separate from externally deployed resources:
 
 ```ts
 {

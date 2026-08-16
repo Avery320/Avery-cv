@@ -10,6 +10,7 @@ const { project, locale } = Astro.props as {
   locale: Locale;
 };
 const detailUrl = localizedPath(project.detailPath, locale);
+const imageSrc = typeof project.image === "string" ? withBase(project.image) : project.image;
 const formatDate = (value: string) =>
   new Intl.DateTimeFormat(locale === "en" ? "en-US" : "zh-TW", {
     year: "numeric",
@@ -27,7 +28,7 @@ const formatDate = (value: string) =>
       aria-label={project.title}
     >
       <Image
-        src={withBase(project.image)}
+        src={imageSrc}
         width={750}
         height={422}
         format="webp"
@@ -43,7 +44,7 @@ const formatDate = (value: string) =>
             class="inline-flex items-center gap-2 rounded-sm underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
             href={detailUrl}
           >
-            {project.title} <span aria-hidden="true">→</span>
+            {project.title}
           </a>
         </h2>
         <p class="py-1">{project.description}</p>
@@ -55,14 +56,18 @@ const formatDate = (value: string) =>
             <ul class="space-y-2" aria-label="Project resources">
               {project.resources.map((resource) => (
                 <li class="flex items-center justify-between gap-3">
-                  <a
-                    class="btn btn-sm transition-colors duration-200 hover:border-primary hover:bg-primary hover:text-primary-content focus-visible:border-primary focus-visible:bg-primary focus-visible:text-primary-content"
-                    href={resource.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {resource.title} <span aria-hidden="true">↗</span>
-                  </a>
+                  {resource.url ? (
+                    <a
+                      class="btn btn-sm transition-colors duration-200 hover:border-primary hover:bg-primary hover:text-primary-content focus-visible:border-primary focus-visible:bg-primary focus-visible:text-primary-content"
+                      href={resource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {resource.title} <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : (
+                    <span class="btn btn-disabled btn-sm" aria-disabled="true">{resource.title}</span>
+                  )}
                   {resource.updatedAt && (
                     <time class="shrink-0 text-[10px] text-base-content/60" datetime={resource.updatedAt}>
                       Updated {formatDate(resource.updatedAt)}
