@@ -1,22 +1,14 @@
 ---
+import { NAV_ITEMS } from "../config";
 import { getLocale, localizedPath } from "../lib/i18n";
 
 const { sideBarActiveItemID } = Astro.props;
 const locale = getLocale(Astro.currentLocale);
-const menuItems = [
-  { id: "home", label: "Home", path: "" },
-  { id: "cv", label: "CV", path: "cv" },
-  { id: "projects", label: "Projects", path: "projects" },
-  { id: "robotics", label: "Robotics", path: "robotics" },
-  { id: "architecture", label: "Architecture", path: "architecture" },
-  { id: "fabrication", label: "Fabrication", path: "fabrication" },
-  { id: "paramtric-design", label: "ParamtricDesign", path: "paramtric-design" },
-];
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
   {
-    menuItems.map(({ id, label, path }) => (
+    NAV_ITEMS.map(({ id, label, path }) => (
       <li><a class:list={["py-3 text-base", { "bg-base-300": id === sideBarActiveItemID }]} href={localizedPath(path, locale)}>{label}</a></li>
     ))
   }

@@ -59,7 +59,7 @@ const formatDateTime = (value: string) =>
           <div class="pt-3">
             <ul class="space-y-2" aria-label="Project resources">
               {project.resources.map((resource) => (
-                <li class="flex items-center justify-between gap-3">
+                <li class="flex flex-wrap items-center gap-x-3 gap-y-2">
                   {resource.url ? (
                     <a
                       class="btn btn-sm transition-colors duration-200 hover:border-primary hover:bg-primary hover:text-primary-content focus-visible:border-primary focus-visible:bg-primary focus-visible:text-primary-content"
@@ -74,7 +74,7 @@ const formatDateTime = (value: string) =>
                   )}
                   {resource.updatedAt ? (
                     <time
-                      class="shrink-0 text-[10px] text-base-content/60"
+                      class="ml-auto shrink-0 text-right text-[10px] text-base-content/60"
                       datetime={resource.updatedAt}
                       data-project-updated-at
                     >

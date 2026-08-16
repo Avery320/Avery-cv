@@ -7,7 +7,7 @@ const portfolioFields = {
   hidden: z.boolean().optional(),
 };
 
-const robotics = defineCollection({
+const defineStringCoverCollection = () => defineCollection({
   type: "content",
   schema: z.object({
     ...portfolioFields,
@@ -15,29 +15,10 @@ const robotics = defineCollection({
   }),
 });
 
-const architecture = defineCollection({
-  type: "content",
-  schema: z.object({
-    ...portfolioFields,
-    cover: z.string().optional(),
-  }),
-});
-
-const fabrication = defineCollection({
-  type: "content",
-  schema: z.object({
-    ...portfolioFields,
-    cover: z.string().optional(),
-  }),
-});
-
-const paramtricDesign = defineCollection({
-  type: "content",
-  schema: z.object({
-    ...portfolioFields,
-    cover: z.string().optional(),
-  }),
-});
+const architecture = defineStringCoverCollection();
+const fabrication = defineStringCoverCollection();
+const paramtricDesign = defineStringCoverCollection();
+const robotics = defineStringCoverCollection();
 
 const projects = defineCollection({
   type: "content",

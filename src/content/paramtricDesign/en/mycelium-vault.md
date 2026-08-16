@@ -1,6 +1,6 @@
 ---
 title: "Mycelium Vault"
-description: "English translation in progress."
+description: "Biomass Materials x Algorithm Structure"
 order: 1
 cover: "images/paramtric-design/mycelium-vault/cover.jpg"
 ---

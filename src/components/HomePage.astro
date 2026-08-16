@@ -1,18 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import FeaturedProjectCard from "./portfolio/FeaturedProjectCard.astro";
+import { NAV_ITEMS } from "../config";
 import { featuredProjects } from "../data/projects";
 import { getLocale, localizedPath } from "../lib/i18n";
 
 const locale = getLocale(Astro.currentLocale);
-const pageLinks = [
-  { label: "CV", path: "cv" },
-  { label: "Projects", path: "projects" },
-  { label: "Robotics", path: "robotics" },
-  { label: "Architecture", path: "architecture" },
-  { label: "Fabrication", path: "fabrication" },
-  { label: "ParametricDesign", path: "paramtric-design" },
-];
+const pageLinks = NAV_ITEMS.filter(({ id }) => id !== "home");
 const pageLinksLabel = locale === "en" ? "Portfolio pages" : "作品頁面";
 ---
 

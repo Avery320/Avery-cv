@@ -34,6 +34,12 @@ const robosimResources: ProjectResource[] = [
 
 export const portfolioPageResources: Record<string, ProjectResource[]> = {
   "robotics/robosim": robosimResources,
+  "robotics/gh-ros2": [
+    {
+      id: "developer-guide",
+      title: "Developer Guide",
+    },
+  ],
   "robotics/robosight": [
     {
       id: "robosight",
@@ -64,6 +70,20 @@ export const portfolioPageResources: Record<string, ProjectResource[]> = {
       url: "https://www.cmchaoarch.com/index.php?route=project/project_detail&language=zh-tw&path=21",
     },
   ],
+  "paramtric-design/mycelium-vault": [
+    {
+      id: "presentation",
+      title: "Presentation",
+      url: "https://docs.google.com/presentation/d/1mah1zHW9VVOF0YwNzGk1W8xosaDb9_6FD9MjbuiHnvs/edit?slide=id.g264562b21dc_14_245#slide=id.g264562b21dc_14_245",
+    },
+  ],
+  "paramtric-design/robotic-wood-cnc-simulation": [
+    {
+      id: "robots",
+      title: "Robots",
+      url: "https://github.com/visose/Robots",
+    },
+  ],
 };
 
 export const getPortfolioPageResources = (detailPath: string) => portfolioPageResources[detailPath] ?? [];
@@ -73,7 +93,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: "robosim",
     title: "RoboSim",
     description: "Human-Computer Interface | ROS | Robotics | Grasshopper",
-    detailPath: "robotics/robosim",
+    detailPath: "projects/robosim",
     image: "images/robotics/robosim/cover.png",
     resources: robosimResources,
   },
@@ -81,12 +101,12 @@ export const featuredProjects: FeaturedProject[] = [
     id: "gh-ros2",
     title: "gh-ros2",
     description: "Grasshopper Plugin | ROS",
-    detailPath: "robotics/gh-ros2",
+    detailPath: "projects/gh-ros2",
     image: "images/robotics/gh-ros2/cover.jpg",
     resources: [
       {
-        id: "developer-guild",
-        title: "Developer Guild",
+        id: "developer-guide",
+        title: "Developer Guide",
       },
     ],
   },
