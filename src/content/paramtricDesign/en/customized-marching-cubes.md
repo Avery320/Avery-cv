@@ -1,6 +1,6 @@
 ---
 title: "Customized Marching Cubes"
-description: "English translation in progress."
+description: "Algorithm Design"
 order: 2
 cover: "images/paramtric-design/customized-marching-cubes/cover.jpg"
 ---

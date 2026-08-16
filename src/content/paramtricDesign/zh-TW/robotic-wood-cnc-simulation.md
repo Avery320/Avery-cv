@@ -1,6 +1,6 @@
 ---
 title: "Robotic Wood CNC Simulation"
-description: "Grasshopper 機械手臂加工模擬｜探索切割路徑、模組組裝與表面紋理。"
+description: "Parametric Design | Robotic Fabrication"
 order: 4
 cover: "images/paramtric-design/robotic-wood-cnc-simulation/cover.jpg"
 ---

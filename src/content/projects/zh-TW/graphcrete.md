@@ -1,6 +1,6 @@
 ---
 title: "Graphcrete: Robotic 3D Concrete Printing for Mold Construction Methodology"
-description: "Grasshopper 機器人製造工作流程｜建立標準化機器人製造工作流程，並開發分析與管理工具，以降低設計到製造之間的資料轉換成本。"
+description: "Robotic Concrete Printing | Robotic Fabrication | Grasshopper"
 order: 3
 cover: "../../../assets/projects/graphcrete.jpg"
 ---

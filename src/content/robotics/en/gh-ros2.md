@@ -1,6 +1,6 @@
 ---
 title: "gh-ros2"
-description: "English translation in progress."
+description: "Grasshopper Plugin | ROS"
 order: 2
 cover: "images/robotics/gh-ros2/cover.jpg"
 ---

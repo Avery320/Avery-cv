@@ -1,6 +1,6 @@
 ---
 title: "Robotic Clay Printing"
-description: "English translation in progress."
+description: "Robotic 3D Printing | Grasshopper"
 order: 2
 cover: "images/fabrication/robotic-clay-printing/cover.jpeg"
 ---

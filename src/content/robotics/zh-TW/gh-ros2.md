@@ -1,6 +1,6 @@
 ---
 title: "gh-ros2"
-description: "Grasshopper 與 ROS 2 資料通訊｜串接幾何設計與機器人系統資訊。"
+description: "Grasshopper Plugin | ROS"
 order: 2
 cover: "images/robotics/gh-ros2/cover.jpg"
 ---

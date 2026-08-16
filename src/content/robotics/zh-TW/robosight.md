@@ -1,6 +1,6 @@
 ---
 title: "RoboSight"
-description: "iOS 遠端監控與控制｜處理跨設備網路連線與即時資料交換。"
+description: "Human-Computer Interface | iOS App | ROS"
 order: 3
 ---
 

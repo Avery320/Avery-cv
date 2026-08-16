@@ -1,6 +1,6 @@
 ---
 title: "Graphcrete: Robotic 3D Concrete Printing for Mold Construction Methodology"
-description: "English translation in progress."
+description: "Robotic Concrete Printing | Robotic Fabrication | Grasshopper"
 order: 3
 cover: "../../../assets/projects/graphcrete.jpg"
 ---

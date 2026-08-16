@@ -1,6 +1,6 @@
 ---
 title: "Smocking Column"
-description: "Grasshopper 與 Kangaroo 表面模擬｜將布料縐摺規則延伸至面板與柱體。"
+description: "Algorithm Design"
 order: 3
 cover: "images/paramtric-design/smocking-column/cover.jpg"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "RoboSim"
-description: "English translation in progress."
+description: "Human-Computer Interface | ROS | Robotics | Grasshopper"
 order: 1
 cover: "images/robotics/robosim/cover.png"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Customized Marching Cubes"
-description: "體素與生成設計｜以自訂 Marching Cubes 元件探索演算法驅動的三維聚合形態。"
+description: "Algorithm Design"
 order: 2
 cover: "images/paramtric-design/customized-marching-cubes/cover.jpg"
 ---

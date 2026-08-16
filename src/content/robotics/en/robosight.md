@@ -1,6 +1,6 @@
 ---
 title: "RoboSight"
-description: "English translation in progress."
+description: "Human-Computer Interface | iOS App | ROS"
 order: 3
 ---
 

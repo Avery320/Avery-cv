@@ -1,6 +1,6 @@
 ---
 title: "Robotic Nonplanar Printing"
-description: "Python 與 Grasshopper 非平面切片演算法｜支援機械手臂增材製造。"
+description: "Robotic 3D Printing | Grasshopper | Python Algorithm"
 order: 1
 cover: "images/fabrication/robotic-nonplanar-printing/cover.jpg"
 ---

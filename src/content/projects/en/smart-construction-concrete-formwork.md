@@ -1,6 +1,6 @@
 ---
 title: "Smart Construction: Low-Carbon Precast Stay-in-Place Reinforced Concrete Column System"
-description: "English translation in progress."
+description: "Robotic Concrete Printing | Robotic Fabrication | Grasshopper"
 order: 1
 cover: "../../../assets/projects/3dcp.jpg"
 ---

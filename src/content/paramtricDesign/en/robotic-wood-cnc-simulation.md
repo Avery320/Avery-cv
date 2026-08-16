@@ -1,6 +1,6 @@
 ---
 title: "Robotic Wood CNC Simulation"
-description: "English translation in progress."
+description: "Parametric Design | Robotic Fabrication"
 order: 4
 cover: "images/paramtric-design/robotic-wood-cnc-simulation/cover.jpg"
 ---

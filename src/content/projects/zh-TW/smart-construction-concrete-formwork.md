@@ -1,6 +1,6 @@
 ---
 title: "智慧建造：減碳預鑄免拆模鋼筋混凝土柱體工法"
-description: "數位雙生演算與機械手臂列印｜參與材料性能、結構測試，以及雙層列印模具路徑演算法開發。"
+description: "Robotic Concrete Printing | Robotic Fabrication | Grasshopper"
 order: 1
 cover: "../../../assets/projects/3dcp.jpg"
 ---
