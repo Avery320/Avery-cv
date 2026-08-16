@@ -80,8 +80,6 @@ const formatDateTime = (value: string) =>
                     >
                       Updated {formatDateTime(resource.updatedAt)}
                     </time>
-                  ) : resource.status ? (
-                    <span class="shrink-0 text-[10px] text-base-content/60">{resource.status}</span>
                   ) : null}
                 </li>
               ))}

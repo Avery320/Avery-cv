@@ -142,13 +142,15 @@ Home page featured projects and portfolio page resources are defined in `src/dat
       id: "developer-guide",
       title: "Developer Guide",
       url: "https://example.com/document/",
-      updatedAt: "2026-08-11T09:32:58+08:00",
+      updatedAt: projectUpdates.robosim,
     },
   ],
 }
 ```
 
-`updatedAt` is currently a manually maintained snapshot of the source path's latest commit date. The site does not yet fetch private repository metadata or synchronize these dates through GitHub Actions.
+Public repositories used for `updatedAt` are registered in `src/data/public-project-sources.json`. The `sync-public-project-updates.yml` workflow reads their latest commits once per day, after pushes to `main`, or when run manually. It writes changed timestamps to `src/data/project-updates.json`, commits that file, and redeploys the site. The browser formats each timestamp in the visitor's local time zone.
+
+The sync currently reads public repositories only. If one source is temporarily unavailable, its last successful timestamp is kept while the remaining sources continue updating.
 
 ## Development
 

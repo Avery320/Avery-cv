@@ -1,0 +1,27 @@
+[
+  {
+    "id": "robosim",
+    "repository": "Avery320/robot-demo",
+    "branch": "main"
+  },
+  {
+    "id": "go2-humble",
+    "repository": "Avery320/go2_humble",
+    "branch": "main"
+  },
+  {
+    "id": "go2-viz",
+    "repository": "Avery320/go2_viz",
+    "branch": "main"
+  },
+  {
+    "id": "fdm-branch-slicer",
+    "repository": "Avery320/fdm_branch_slicer",
+    "branch": "main"
+  },
+  {
+    "id": "robosight",
+    "repository": "Avery320/RoboSight",
+    "branch": "main"
+  }
+]

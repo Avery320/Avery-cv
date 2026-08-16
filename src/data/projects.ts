@@ -6,7 +6,6 @@ export interface ProjectResource {
   title: string;
   url?: string;
   updatedAt?: string;
-  status?: string;
 }
 
 export interface FeaturedProject {
@@ -23,18 +22,34 @@ const robosimResources: ProjectResource[] = [
     id: "developer-guide",
     title: "Developer Guide",
     url: "https://avery320.github.io/robot-demo/document/",
-    status: "In development",
+    updatedAt: projectUpdates.robosim,
   },
   {
     id: "web-demo",
     title: "Web Demo",
     url: "https://avery320.github.io/robot-demo/javascript/example/bundle/main.html",
-    status: "In development",
+    updatedAt: projectUpdates.robosim,
   },
 ];
 
 export const portfolioPageResources: Record<string, ProjectResource[]> = {
   "robotics/robosim": robosimResources,
+  "robotics/robosight": [
+    {
+      id: "robosight",
+      title: "RoboSight",
+      url: "https://github.com/Avery320/RoboSight",
+      updatedAt: projectUpdates.robosight,
+    },
+  ],
+  "fabrication/robotic-nonplanar-printing": [
+    {
+      id: "fdm-branch-slicer",
+      title: "fdm_branch_slicer",
+      url: "https://github.com/Avery320/fdm_branch_slicer",
+      updatedAt: projectUpdates["fdm-branch-slicer"],
+    },
+  ],
   "projects/smart-construction-concrete-formwork": [
     {
       id: "abri-research",
