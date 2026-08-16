@@ -55,7 +55,7 @@ export const zhTwCv: CvContent = {
   skillsAsLines: true,
   skills: [
     "建模與繪圖軟體：Rhino、Grasshopper、Revit、Cura、InDesign、Illustrator、Photoshop",
-    "程式語言：Python、C#／.NET（Grasshopper plugin）、JavaScript（網頁開發）、Swift（iOS 手機 App）",
+    "程式語言：Python、C#／.NET（Grasshopper Plugin）、JavaScript（網頁開發）、Swift（iOS 手機 App）",
     "開發工具：Git（版本管理）、Conda、VS Code、Xcode、Docker、Ubuntu、VNC（虛擬環境）",
     "硬體設備：Robotic Arm、3D Printer、Laser Cutter、Jetson Nano（微電腦）、RealSense（深度相機）",
   ],
@@ -124,7 +124,7 @@ export const zhTwCv: CvContent = {
         {
           date: "2025.07 - 至今",
           title: "RoboSim",
-          titleSuffix: ": 機械人機協作介面",
+          titleSuffix: ": 機器人協作介面",
           description: "整合機器人、幾何軟體、感測設備資訊的人機控制介面。",
           href: "robotics/robosim",
         },
@@ -138,7 +138,7 @@ export const zhTwCv: CvContent = {
           date: "2026.06 - 至今",
           title: "RoboSim-gh-plugin",
           titleSuffix: ": RoboSim Grasshopper 工具",
-          description: "使用 RoboSim API 開發的 Grasshopper plugin，用於在 Grasshopper 中操作 RoboSim 軟體。",
+          description: "使用 RoboSim API 開發的 Grasshopper Plugin，用於在 Grasshopper 中操作 RoboSim 軟體。",
         },
         {
           date: "2026.06 - 至今",
@@ -150,7 +150,7 @@ export const zhTwCv: CvContent = {
         {
           date: "2026.05 - 至今",
           title: "RoboSight",
-          titleSuffix: ": iOS 機器人遠端監控與控制 APP",
+          titleSuffix: ": iOS 機器人遠端監控與控制 App",
           description: "以跨設備與地點的網路連線與資料交換技術，串聯普及化的 iOS 手機設備，用於遠端控制、監控機器人。",
           href: "robotics/robosight",
         },
@@ -324,14 +324,14 @@ export const enCv: CvContent = {
       items: [
         {
           date: "2026.06",
-          title: "The 37th Architectural Research Conference of Architectural Institute of Taiwan",
-          titleSuffix: ", The 38th Architectural Research Conference of Architectural Institute of Taiwan",
+          title: "A Human-Robot Collaboration Interface for Design and Fabrication",
+          titleSuffix: ", The 38th Architectural Research Conference of the Architectural Institute of Taiwan",
           description: "Developed a no-code human-robot collaboration interface integrating design workflows and robotic control.",
         },
         {
           date: "2025.06",
-          title: "Cooperative Dual-Robot Arm Construction of Reinforced Concrete 3D-Printed Components",
-          titleSuffix: ", The 37th Architectural Research Conference of Architectural Institute of Taiwan",
+          title: "Development of an Automated Brick Construction System Integrating Robotic Arms and Computer Vision",
+          titleSuffix: ", The 37th Architectural Research Conference of the Architectural Institute of Taiwan",
           description: "Developed an autonomous mobile robot path-planning and obstacle-avoidance system for construction site applications.",
         },
       ],
@@ -354,7 +354,7 @@ export const enCv: CvContent = {
         },
         {
           date: "2024.03 - 2024.11",
-          title: "Graphcrete: Robotic 3D Concrete Printing for Mold Construction Methodology Developed a robotic concrete printing workflow using printed concrete formwork as molds",
+          title: "Graphcrete: Robotic 3D Concrete Printing for Mold Construction Methodology",
           description: "Established a standardized design-to-fabrication workflow with Grasshopper, and developed structural analysis and formwork segmentation management tools to reduce data conversion costs between design and manufacturing.",
           href: "projects/graphcrete",
         },
@@ -508,7 +508,7 @@ export const enCv: CvContent = {
           date: "2024.06",
           title: "Integrating Machine Learning in Robotic Construction and Design",
           titleSuffix: ", NCKU ARCH",
-          subtitle: "Teaching Assistant | Teaching Assistant | Applied machine learning techniques with industrial robotic systems for modern construction and automated manufacturing applications.",
+          subtitle: "Teaching Assistant | Applied machine learning techniques with industrial robotic systems for modern construction and automated manufacturing applications.",
         },
         {
           date: "2023.08",

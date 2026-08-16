@@ -7,4 +7,4 @@ cover: "images/paramtric-design/smocking-column/cover.jpg"
 
 # Smocking Column
 
-English verision is in progress.
+English version is in progress.

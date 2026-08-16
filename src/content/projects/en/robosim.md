@@ -7,4 +7,4 @@ hidden: true
 
 # RoboSim
 
-English verision is in progress.
+English version is in progress.

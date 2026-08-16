@@ -7,14 +7,14 @@ cover: "images/robotics/hiwin-robot-arm-kinematics/rviz.png"
 
 # Hiwin Robot Arm Kinematics (hiwin_rak)
 
-## Introdcution
+## Introduction
 Hiwin_rak 這是一個基於 ROS 開發的 Hiwin 機械手臂控制專案，採用即時控制的方式控制機器人，專案以上銀科技官方提供的 [hiwin_ros](https://github.com/HIWINCorporation/hiwin_ros.git) 為基礎，使用 [hiwin_robot_client_library](https://github.com/HIWINCorporation/hiwin_robot_client_library.git) 中的 TCP 協議與實體機械手臂通訊達到透過 ROS 控制機器人的目標。
 
 目前提供了 **Axis (關節數值控制)**, **moveJ (關節運動)**, **moveL (空間運動)** 三種運動控制方式，以及 **digital output（數位控制）** 和 **WAIT(等待)** 的控制方法。
 
 本專案用於控制 HIWIN 機械手臂夾取鋼筋，放置於混凝土模具中為目標，因此該控制方法自定義 ROS Message 與使用 JSONL 的檔案格式，與設計常使用的 Rhino/Grasshopper 軟體整合，其目的為使用 Rhino/Grasshopper 進行機械手臂的工作路徑規劃，並交由 ROS 計算機器人的運動軌跡控制機器人。
 
-本專也與 [RoboSim](../robosim/) 進行整合，將該方法以 docker 的方式打包運行，使用 RoboSim 完整的控制介面進行操作。
+本專案與 [RoboSim](../robosim/) 進行整合，將該方法以 Docker 的方式打包運行，使用 RoboSim 完整的控制介面進行操作。
 
 ## 資料結構定義
 本專案定義 MotionCommand 與 MotionSequence 兩種 ROS Message，用於序列化控制指令並以 JSONL 格式儲存與讀取。MotionCommand 提供五種基礎指令格式： **Axis**, **moveJ**, **moveL**, **digital output**, **WAIT** ；MotionSequence 則封裝多筆 MotionCommand 形成可執行的指令序列。內容如下：
@@ -48,11 +48,11 @@ Hiwin_rak 採用低耦合的模組化分層架構，並依照控制流程，將�
 
 ## 資料數據與控制流程
 Hiwin_rak 的控制流程主要由 motion_executor.py 與 planner_node.py 兩個節點運行：
-- planner_node.py 用於讀取 JOSNL 檔案中的 MotionSequence 資料並將其發佈至 /motion_sequence topic。
+- planner_node.py 用於讀取 JSONL 檔案中的 MotionSequence 資料並將其發佈至 /motion_sequence topic。
 - motion_executor.py 則負責訂閱 /motion_sequence 並逐行發布 MotionCommand 資料，之後會進行解析調用相應的控制方法執行，並返回執行狀態，直到序列結束。
 
-Hiwin_rak 同時也提提供圖形化操作介面作為使用者與 ROS 控制系統的互動入口。
-介面使用 pyqt 封裝所有開發功能，包括 Joints slider 的關節控制，/tcp 位置的 MoveJ, MoveL 控制，DO 的數位控制，速度縮放控制，JSONL 的檔案讀取與發布，以及即時狀態監控等，使後端也擁有獨立的操作介面，使使用者無須直接操作 ROS 指令即可完成機械手臂控制與系統監看。
+Hiwin_rak 同時也提供圖形化操作介面作為使用者與 ROS 控制系統的互動入口。
+介面使用 PyQt 封裝所有開發功能，包括 Joint sliders 的關節控制，/tcp 位置的 MoveJ、MoveL 控制，DO 的數位控制，速度縮放控制，JSONL 的檔案讀取與發布，以及即時狀態監控等，使後端也擁有獨立的操作介面，使使用者無須直接操作 ROS 指令即可完成機械手臂控制與系統監看。
 
 <div class="image-grid image-grid-2">
   <img src="/Avery-cv/images/robotics/hiwin-robot-arm-kinematics/rviz.png" alt="HIWIN robot visualization in RViz" />

@@ -51,7 +51,7 @@ export const portfolioPageResources: Record<string, ProjectResource[]> = {
   "fabrication/robotic-nonplanar-printing": [
     {
       id: "fdm-branch-slicer",
-      title: "fdm_branch_slicer",
+      title: "GitHub",
       url: "https://github.com/Avery320/fdm_branch_slicer",
       updatedAt: projectUpdates["fdm-branch-slicer"],
     },
@@ -59,7 +59,7 @@ export const portfolioPageResources: Record<string, ProjectResource[]> = {
   "projects/smart-construction-concrete-formwork": [
     {
       id: "abri-research",
-      title: "ABRI Research",
+      title: "Research",
       url: "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&sms=9489&s=339180",
     },
   ],
@@ -75,13 +75,6 @@ export const portfolioPageResources: Record<string, ProjectResource[]> = {
       id: "presentation",
       title: "Presentation",
       url: "https://docs.google.com/presentation/d/1mah1zHW9VVOF0YwNzGk1W8xosaDb9_6FD9MjbuiHnvs/edit?slide=id.g264562b21dc_14_245#slide=id.g264562b21dc_14_245",
-    },
-  ],
-  "paramtric-design/robotic-wood-cnc-simulation": [
-    {
-      id: "robots",
-      title: "Robots",
-      url: "https://github.com/visose/Robots",
     },
   ],
 };

@@ -7,4 +7,4 @@ cover: "images/paramtric-design/robotic-wood-cnc-simulation/cover.jpg"
 
 # Robotic Wood CNC Simulation
 
-English verision is in progress.
+English version is in progress.

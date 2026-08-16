@@ -5,10 +5,10 @@ order: 3
 ---
 
 # RoboSight
-[Github](https://github.com/Avery320/RoboSight) | [ros-docker](../ros-docker/)
+[GitHub](https://github.com/Avery320/RoboSight) | [ROS Docker](../ros-docker/)
 
 ## Introduction
-RoboSight 是一個透過 iOS 設備作為機器人外部感測裝置的專案。使用 Zonoh 作為 middleware 與 ROS 連線。目前已開發：
+RoboSight 是一個透過 iOS 設備作為機器人外部感測裝置的專案。使用 Zenoh 作為 middleware 與 ROS 連線。目前已開發：
 - IMU
   - 整合至 `/tf`
 - 相機功能

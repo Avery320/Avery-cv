@@ -6,4 +6,4 @@ order: 3
 
 # RoboSight
 
-English verision is in progress.
+English version is in progress.

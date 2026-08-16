@@ -7,4 +7,4 @@ hidden: true
 
 # gh-ros2
 
-English verision is in progress.
+Project information is being prepared.

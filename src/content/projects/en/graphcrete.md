@@ -7,4 +7,4 @@ cover: "../../../assets/projects/graphcrete.jpg"
 
 # Graphcrete: Robotic 3D Concrete Printing for Mold Construction Methodology
 
-English verision is in progress.
+English version is in progress.

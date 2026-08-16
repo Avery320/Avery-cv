@@ -11,7 +11,7 @@ cover: "../../../assets/projects/graphcrete.jpg"
 
 ## Introduction
 
-本專案是以機械手臂混凝土列印製造混凝構件做為混凝土模板使用，內部以鋼筋混凝土作為柱子的結構，探索混凝土列印構件用於建築構件的可行性。
+本專案是以機械手臂混凝土列印製造混凝土構件做為混凝土模板使用，內部以鋼筋混凝土作為柱子的結構，探索混凝土列印構件用於建築構件的可行性。
 
 <div class="image-grid image-grid-3">
   <img src="https://ik.imagekit.io/cheng3n/Graphcrete/001.png?updatedAt=1770897662130" alt="Graphcrete column" />

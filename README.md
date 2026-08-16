@@ -136,7 +136,7 @@ Home page featured projects and portfolio page resources are defined in `src/dat
 ```ts
 {
   id: "robosim",
-  detailPath: "robotics/robosim",
+  detailPath: "projects/robosim",
   resources: [
     {
       id: "developer-guide",

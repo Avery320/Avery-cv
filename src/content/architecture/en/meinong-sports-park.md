@@ -7,4 +7,4 @@ cover: "images/architecture/meinong-sports-park/cover.jpg"
 
 # Meinong Sports Park
 
-English verision is in progress.
+English version is in progress.

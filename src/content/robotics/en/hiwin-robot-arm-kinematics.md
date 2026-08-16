@@ -7,4 +7,4 @@ cover: "images/robotics/hiwin-robot-arm-kinematics/rviz.png"
 
 # Hiwin Robot Arm Kinematics & hiwin_prc
 
-English verision is in progress.
+English version is in progress.
