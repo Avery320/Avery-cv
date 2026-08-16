@@ -1,10 +1,12 @@
 import type { ImageMetadata } from "astro";
+import projectUpdates from "./project-updates.json";
 
 export interface ProjectResource {
   id: string;
   title: string;
   url?: string;
   updatedAt?: string;
+  status?: string;
 }
 
 export interface FeaturedProject {
@@ -21,13 +23,13 @@ const robosimResources: ProjectResource[] = [
     id: "developer-guide",
     title: "Developer Guide",
     url: "https://avery320.github.io/robot-demo/document/",
-    updatedAt: "2026-08-11T09:32:58+08:00",
+    status: "In development",
   },
   {
     id: "web-demo",
     title: "Web Demo",
     url: "https://avery320.github.io/robot-demo/javascript/example/bundle/main.html",
-    updatedAt: "2026-08-12T22:09:05+08:00",
+    status: "In development",
   },
 ];
 
@@ -84,11 +86,13 @@ export const featuredProjects: FeaturedProject[] = [
         id: "go2-humble",
         title: "go2_humble",
         url: "https://github.com/Avery320/go2_humble",
+        updatedAt: projectUpdates["go2-humble"],
       },
       {
         id: "go2-viz",
         title: "go2_viz",
         url: "https://github.com/Avery320/go2_viz",
+        updatedAt: projectUpdates["go2-viz"],
       },
     ],
   },

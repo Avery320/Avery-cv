@@ -11,11 +11,15 @@ const { project, locale } = Astro.props as {
 };
 const detailUrl = localizedPath(project.detailPath, locale);
 const imageSrc = typeof project.image === "string" ? withBase(project.image) : project.image;
-const formatDate = (value: string) =>
+const formatDateTime = (value: string) =>
   new Intl.DateTimeFormat(locale === "en" ? "en-US" : "zh-TW", {
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+    timeZoneName: "short",
     timeZone: "Asia/Taipei",
   }).format(new Date(value));
 ---
@@ -68,11 +72,17 @@ const formatDate = (value: string) =>
                   ) : (
                     <span class="btn btn-disabled btn-sm" aria-disabled="true">{resource.title}</span>
                   )}
-                  {resource.updatedAt && (
-                    <time class="shrink-0 text-[10px] text-base-content/60" datetime={resource.updatedAt}>
-                      Updated {formatDate(resource.updatedAt)}
+                  {resource.updatedAt ? (
+                    <time
+                      class="shrink-0 text-[10px] text-base-content/60"
+                      datetime={resource.updatedAt}
+                      data-project-updated-at
+                    >
+                      Updated {formatDateTime(resource.updatedAt)}
                     </time>
-                  )}
+                  ) : resource.status ? (
+                    <span class="shrink-0 text-[10px] text-base-content/60">{resource.status}</span>
+                  ) : null}
                 </li>
               ))}
             </ul>
@@ -82,3 +92,27 @@ const formatDate = (value: string) =>
     </div>
   </div>
 </article>
+
+<script>
+  const formatProjectUpdateTimes = () => {
+    const formatter = new Intl.DateTimeFormat(document.documentElement.lang || undefined, {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23",
+      timeZoneName: "short",
+    });
+
+    document.querySelectorAll<HTMLTimeElement>("time[data-project-updated-at]").forEach((element) => {
+      const date = new Date(element.dateTime);
+
+      if (!Number.isNaN(date.getTime())) {
+        element.textContent = `Updated ${formatter.format(date)}`;
+      }
+    });
+  };
+
+  formatProjectUpdateTimes();
+</script>
