@@ -7,7 +7,7 @@ export const enCv: CvContent = {
   workExperience: [
     {
       date: "2026.08 - Present",
-      title: "聯雨設計製造有限公司",
+      title: "UNITED RESEARCH DESIGN TECHNOLOGY CO., LTD.",
       href: "https://urdt.tw/",
       description: [{ text: "Robotics R&D Engineer", level: "heading" }],
     },

@@ -22,7 +22,7 @@ const routePath = getRoutePath(Astro.url.pathname);
 const targetLocale = locale === "en" ? "zh-TW" : "en";
 const languageSwitch = {
   href: localizedPath(routePath, targetLocale),
-  label: locale === "en" ? "中" : "EN",
+  label: locale === "en" ? "EN" : "中",
   ariaLabel: locale === "en" ? "Switch to Traditional Chinese" : "切換至英文",
 };
 const alternates = includeSidebar
