@@ -11,25 +11,7 @@ const { content } = Astro.props as { content: CvContent };
   description={content.pageDescription}
   sideBarActiveItemID="cv"
 >
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">{content.profileHeading}</div>
-  </div>
-
-  <div class="mb-10 text-justify">
-    {content.profile.map((paragraph) => <p class="mb-4 last:mb-0">{paragraph}</p>)}
-  </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">{content.skillsHeading}</div>
-  </div>
-
-  {
-    content.skillsAsLines
-      ? <div class="mb-10">{content.skills.map((skill) => <p>{skill}</p>)}</div>
-      : <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
-          {content.skills.map((skill) => <li>{skill}</li>)}
-        </ul>
-  }
+  <CvTimelineSection heading={content.workExperienceHeading} items={content.workExperience} />
 
   <CvTimelineSection heading={content.educationHeading} items={content.education} />
 
