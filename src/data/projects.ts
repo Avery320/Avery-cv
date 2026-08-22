@@ -124,4 +124,19 @@ export const featuredProjects: FeaturedProject[] = [
       },
     ],
   },
+  {
+    id: "comet",
+    title: "Comet",
+    description: "In development",
+    detailPath: "https://github.com/Avery320/comet",
+    image: "post_img.webp",
+    resources: [
+      {
+        id: "comet-github",
+        title: "GitHub",
+        url: "https://github.com/Avery320/comet",
+        updatedAt: projectUpdates.comet,
+      },
+    ],
+  },
 ];

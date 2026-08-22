@@ -23,5 +23,10 @@
     "id": "robosight",
     "repository": "Avery320/RoboSight",
     "branch": "main"
+  },
+  {
+    "id": "comet",
+    "repository": "Avery320/comet",
+    "branch": "main"
   }
 ]
