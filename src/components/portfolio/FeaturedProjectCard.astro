@@ -9,8 +9,7 @@ const { project, locale } = Astro.props as {
   project: FeaturedProject;
   locale: Locale;
 };
-const isExternalDetail = project.detailPath.startsWith("http://") || project.detailPath.startsWith("https://");
-const detailUrl = isExternalDetail ? project.detailPath : localizedPath(project.detailPath, locale);
+const detailUrl = localizedPath(project.detailPath, locale);
 const imageSrc = typeof project.image === "string" ? withBase(project.image) : project.image;
 const formatDateTime = (value: string) =>
   new Intl.DateTimeFormat(locale === "en" ? "en-US" : "zh-TW", {
@@ -30,8 +29,6 @@ const formatDateTime = (value: string) =>
     <a
       class="block shrink-0 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
       href={detailUrl}
-      target={isExternalDetail ? "_blank" : undefined}
-      rel={isExternalDetail ? "noopener noreferrer" : undefined}
       aria-label={project.title}
     >
       <Image
@@ -50,8 +47,6 @@ const formatDateTime = (value: string) =>
           <a
             class="inline-flex items-center gap-2 rounded-sm underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
             href={detailUrl}
-            target={isExternalDetail ? "_blank" : undefined}
-            rel={isExternalDetail ? "noopener noreferrer" : undefined}
           >
             {project.title}
           </a>

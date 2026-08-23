@@ -128,7 +128,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: "comet",
     title: "Comet",
     description: "In development",
-    detailPath: "https://github.com/Avery320/comet",
+    detailPath: "projects/comet",
     image: "post_img.webp",
     resources: [
       {
