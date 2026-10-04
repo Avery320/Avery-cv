@@ -6,6 +6,12 @@ export const zhTwCv: CvContent = {
   workExperienceHeading: "Work Experience",
   workExperience: [
     {
+      date: "2026.09 - 至今",
+      title: "台積電",
+      href: "https://www.tsmc.com/chinese",
+      description: [{ text: "建築工程師", level: "heading" }],
+    },
+    {
       date: "2026.08 - 至今",
       title: "聯雨設計製造有限公司",
       href: "https://urdt.tw/",

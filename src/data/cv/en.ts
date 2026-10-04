@@ -6,6 +6,12 @@ export const enCv: CvContent = {
   workExperienceHeading: "Work Experience",
   workExperience: [
     {
+      date: "2026.09 - Present",
+      title: "TSMC",
+      href: "https://www.tsmc.com/english",
+      description: [{ text: "Architectural Engineer", level: "heading" }],
+    },
+    {
       date: "2026.08 - Present",
       title: "UNITED RESEARCH DESIGN TECHNOLOGY CO., LTD.",
       href: "https://urdt.tw/",
