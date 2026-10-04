@@ -12,7 +12,7 @@ export const zhTwCv: CvContent = {
       description: [{ text: "建築工程師", level: "heading" }],
     },
     {
-      date: "2026.08 - 至今",
+      date: "2026.08 - 2026.09",
       title: "聯雨設計製造有限公司",
       href: "https://urdt.tw/",
       description: [{ text: "機器人研發工程師", level: "heading" }],

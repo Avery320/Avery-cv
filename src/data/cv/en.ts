@@ -12,7 +12,7 @@ export const enCv: CvContent = {
       description: [{ text: "Architectural Engineer", level: "heading" }],
     },
     {
-      date: "2026.08 - Present",
+      date: "2026.08 - 2026.09",
       title: "UNITED RESEARCH DESIGN TECHNOLOGY CO., LTD.",
       href: "https://urdt.tw/",
       description: [{ text: "Robotics R&D Engineer", level: "heading" }],
