@@ -104,6 +104,27 @@ export const featuredProjects: FeaturedProject[] = [
     ],
   },
   {
+    id: "c-bim-demo",
+    title: "C-BIM Demo",
+    description: "Web Demo",
+    detailPath: "projects/c-bim-demo",
+    image: "post_img.webp",
+    resources: [
+      {
+        id: "web-demo",
+        title: "Web Demo",
+        url: "https://avery320.github.io/c-bim-demo/",
+        updatedAt: projectUpdates["c-bim-demo"],
+      },
+      {
+        id: "github",
+        title: "GitHub",
+        url: "https://github.com/Avery320/c-bim-demo",
+        updatedAt: projectUpdates["c-bim-demo"],
+      },
+    ],
+  },
+  {
     id: "quadruped-robot",
     title: "Quadruped Robot",
     description: "Unitree Go2 | ROS 2",

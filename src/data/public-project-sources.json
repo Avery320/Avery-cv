@@ -28,5 +28,10 @@
     "id": "comet",
     "repository": "Avery320/comet",
     "branch": "main"
+  },
+  {
+    "id": "c-bim-demo",
+    "repository": "Avery320/c-bim-demo",
+    "branch": "main"
   }
 ]
